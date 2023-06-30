@@ -11,6 +11,9 @@ p{
 .color-black{
 	color:$black;
 }
+.color-gold{
+	color:$gold !important;
+}
 .light-grey{
 	color: $light-grey;
 }
@@ -70,4 +73,14 @@ p{
 }
 .btn-black:hover{
 
+}
+
+/*Datatables*/
+.dataTables_wrapper{
+	padding:20px;
+	border:1px solid $light-grey; 
+}
+
+.dog-list-warpper{
+	min-height: 70vh;
 }

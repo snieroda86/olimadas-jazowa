@@ -57,3 +57,16 @@ if ( ! function_exists('sn_wp_custom_post_type_rodowody_psow') ) {
 	}
 	add_action( 'init', 'sn_wp_custom_post_type_rodowody_psow', 0 );
 }
+
+// Get all post type ''
+
+function get_all_rodowody_psow(){
+	$args = array(
+	    'post_type' => 'rodowody_psow',
+	    'posts_per_page' => -1,
+	    'post_status' => 'publish'
+	);
+
+	$query = new WP_Query($args);
+	return $query;
+}

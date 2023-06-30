@@ -35,7 +35,7 @@ get_header();
                   <div class="table-buttons-sn">
                     <!-- Menu item -->
                     <div class="table-button-item d-flex">
-                      <a href="#" class="d-flex">
+                      <a href="<?php the_permalink(15); ?>" class="d-flex">
                         <div class="table-button-icon">
                           <i class="fa-solid fa-plus"></i>
                         </div>
@@ -47,7 +47,7 @@ get_header();
                     <!-- Menu item end -->
                     <!-- Menu item -->
                     <div class="table-button-item d-flex">
-                      <a href="#" class="d-flex">
+                      <a href="<?php echo get_post_type_archive_link('rodowody_psow'); ?>" class="d-flex">
                         <div class="table-button-icon">
                           <i class="fa-solid fa-list"></i>
                         </div>

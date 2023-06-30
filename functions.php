@@ -208,6 +208,9 @@ function web14devsn_scripts() {
 	// wp_enqueue_style( 'web14devsn-style-aos', 'https://unpkg.com/aos@next/dist/aos.css' );
 	wp_enqueue_style( 'web14devsn-style-slick',get_template_directory_uri().'/plugins/slick-slider/slick.css', array(), _S_VERSION );
 
+	// Datatables
+	wp_enqueue_style( 'web14devsn-datatables-css','//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css', array(), _S_VERSION );
+
 	wp_enqueue_style( 'web14devsn-style-css', get_template_directory_uri().'/dist/css/style.css', array(), _S_VERSION );
 
 
@@ -218,7 +221,7 @@ function web14devsn_scripts() {
 
 	wp_enqueue_script( 'web14devsn-js-slick',get_template_directory_uri().'/plugins/slick-slider/slick.min.js', array("jquery"), _S_VERSION , true);
 
-	// wp_enqueue_script( 'web14devsn-js-tilt',get_template_directory_uri().'/plugins/tilt-js/tilt.js', array("jquery"), _S_VERSION , true);
+	wp_enqueue_script( 'web14devsn-datatables-js','//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js', array("jquery"), _S_VERSION , true);
 
 	wp_enqueue_script( 'web14devsn-main-js', get_template_directory_uri() . '/dist/js/main.js', array("jquery"), _S_VERSION, true );
 

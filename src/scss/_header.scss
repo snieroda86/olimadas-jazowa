@@ -5,4 +5,27 @@ header.header_section{
 			height:auto;
 		}
 	}
+
+	ul.navbar-nav{
+		li{
+			transition: 0.4s;
+		}
+
+		@media(min-width: 992px){
+			& > li:hover{
+				background: $gold;
+
+				a.nav-link{
+					color:#fff !important; 
+				}
+			}
+		}
+		li.active{
+			background: $gold;
+
+			a.nav-link{
+				color:#fff !important; 
+			}
+		}
+	}
 }

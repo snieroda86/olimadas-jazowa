@@ -31,13 +31,46 @@ get_header();
                   <p class="light-grey pt-4 pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                  <div class="inline-buttons-group d-flex flex-wrap justify-content-between">
-                    <a href="#" class="btn-main-sn btn-gold"><span>Add dog</span><span class="btn-arrow pl-2">
-                     <i class="fa-solid fa-chevron-right"></i></span></a>
-                    <a  href="#"class="btn-main-sn btn-black"><span>Dogs list</span><span class="btn-arrow pl-2">
-                      <i class="fa-solid fa-chevron-right"></i></span></a>
-
+                  <!-- Table buttons -->
+                  <div class="table-buttons-sn">
+                    <!-- Menu item -->
+                    <div class="table-button-item d-flex">
+                      <a href="#" class="d-flex">
+                        <div class="table-button-icon">
+                          <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <div class="table-button-label btn-gold">
+                          Add dog
+                        </div>
+                      </a>
+                    </div>
+                    <!-- Menu item end -->
+                    <!-- Menu item -->
+                    <div class="table-button-item d-flex">
+                      <a href="#" class="d-flex">
+                        <div class="table-button-icon">
+                          <i class="fa-solid fa-list"></i>
+                        </div>
+                        <div class="table-button-label btn-gold">
+                          Dogs list
+                        </div>
+                      </a>
+                    </div>
+                    <!-- Menu item end -->
+                    <!-- Menu item -->
+                    <div class="table-button-item d-flex">
+                      <a href="#" class="d-flex">
+                        <div class="table-button-icon">
+                          <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="table-button-label btn-gold">
+                          My account
+                        </div>
+                      </a>
+                    </div>
+                    <!-- Menu item end -->
                   </div>
+                  
                 </div>
                
               </div>

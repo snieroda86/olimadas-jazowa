@@ -53,23 +53,18 @@
 	            </button>
 
 	            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-	              <ul class="navbar-nav ml-auto">
-	                <li class="nav-item active">
-	                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-	                </li>
-	                <li class="nav-item">
-	                  <a class="nav-link" href="about.html"> About</a>
-	                </li>
-	                <li class="nav-item">
-	                  <a class="nav-link" href="chocolate.html">Chocolates</a>
-	                </li>
-	                <li class="nav-item">
-	                  <a class="nav-link" href="testimonial.html">Testimonial</a>
-	                </li>
-	                <li class="nav-item">
-	                  <a class="nav-link" href="contact.html">Contact Us</a>
-	                </li>
-	              </ul>
+	               <?php
+			        wp_nav_menu( array(
+			            'theme_location'    => 'menu-primary',
+			            'depth'             => 2,
+			            'container'         => '',
+			            'container_class'   => '',
+			            'container_id'      => 'bs-example-navbar-collapse-1',
+			            'menu_class'        => 'nav navbar-nav ml-auto',
+			            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+			            'walker'            => new WP_Bootstrap_Navwalker(),
+			        ) );
+			        ?>
 	              <div class="quote_btn-container">
 	                <form class="form-inline">
 	                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">

@@ -30,7 +30,7 @@ function jsmin(){
 
 function watchTasks(){
 	browserSync.init({
-	    proxy: "http://localhost/olimadas"
+	    proxy: "http://localhost/olimadas-2"
 	});
 
 	// sledzone pliki

@@ -231,6 +231,16 @@ add_action( 'wp_enqueue_scripts', 'web14devsn_scripts' );
  */
 // require get_template_directory() . '/inc/customizer.php';
 
+/**
+ * Custom posts
+ */
+require get_template_directory() . '/inc/custom-posts.php';
+
+/**
+ * Custom database tables
+ */
+require get_template_directory() . '/inc/custom-db_tables.php';
+
 // Disable gutenberg editor
 add_filter( 'use_block_editor_for_post', '__return_false' );
 
@@ -266,3 +276,9 @@ function my_acf_json_save_point( $path ) {
     return $path;
     
 }
+
+// Actions
+/**
+ * 
+ */
+require get_template_directory() . '/inc/save-custom_post-actions.php';

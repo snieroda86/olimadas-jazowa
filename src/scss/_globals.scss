@@ -1,0 +1,69 @@
+h1,h2,h3,h4,h5,h6,p,th,td,input,button,li,a{
+	font-family: 'Nunito', sans-serif;
+}
+h1{
+	font-size: 32px;
+	font-weight: 700;
+}
+p{
+	font-size: 18px;
+}
+.color-black{
+	color:$black;
+}
+.light-grey{
+	color: $light-grey;
+}
+.heading-underline-sn{
+	position: relative;
+
+	&::after{
+		content:'';
+		width:100px;
+		height: 3px;
+		background: $red;
+		border-radius: 3px;
+		display: block;
+		margin-top: 20px;
+	}
+}
+
+.btn-main-sn{
+	@include el-center;
+	width:100%;
+	height: 55px;
+	max-width: 200px;
+	font-size: 14px;
+	text-transform: uppercase;
+	background: $black;
+	color:#fff;
+	transition:0.4s;
+
+	.btn-arrow{
+		color:#fff;
+		font-size: 12px;
+	}
+	.btn-arrow{
+		transition: 0.5s;
+	}
+
+	&:hover{
+		text-decoration: none;
+		color:#fff;
+
+		.btn-arrow{
+			margin-left: 5px;
+		}
+	}
+
+}
+.btn-gold{
+	background: $gold;
+
+	&:hover{
+		background: $gold-hover;
+	}
+}
+.btn-black:hover{
+
+}

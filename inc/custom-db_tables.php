@@ -19,13 +19,6 @@ if (!function_exists('sn_dogs_colors_table_create')) {
             require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
             dbDelta($sql);
 
-            // Generowanie i wstawianie kolorów do tabeli
-            // $colors = array();
-            
-            // for ($i = 0; $i < 500; $i++) {
-            //     $color = sprintf('#%06X', mt_rand(0, 0xFFFFFF));
-            //     $colors[] = $color;
-            // }
             $colors = array();
 
             while (count($colors) < 500) {

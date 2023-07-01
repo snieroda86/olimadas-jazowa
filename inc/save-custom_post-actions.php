@@ -37,3 +37,19 @@ function sn_save_dog_color_meta($post_id) {
     }
 }
 add_action('wp_insert_post', 'sn_save_dog_color_meta', 10, 1);
+
+// Post delete
+add_action('before_delete_post', 'sn_delete_post_insert_color');
+function sn_delete_post_insert_color($post_id) {
+    $color = get_post_meta($post_id , 'dog_color' , true);
+
+    if(!empty($color)){
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'dog_colors';
+        $data = array(
+            'color_code' => $color,
+        );
+
+        $wpdb->insert($table_name, $data);
+    }
+}

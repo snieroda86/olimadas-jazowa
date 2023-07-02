@@ -50,9 +50,49 @@
             "append": ""
         },
         {
+            "key": "field_64a1c6ab35c3d",
+            "label": "Kraj pochodzenia właściciela",
+            "name": "owner_country",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_649edbacc6f78",
             "label": "Hodowca",
             "name": "hodowca",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64a1c6d235c3e",
+            "label": "Kraj pochodzenia hodowcy",
+            "name": "breeder_country",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -88,7 +128,7 @@
             ],
             "post_status": "",
             "taxonomy": "",
-            "return_format": "object",
+            "return_format": "id",
             "multiple": 0,
             "allow_null": 0,
             "ui": 1
@@ -112,7 +152,7 @@
             ],
             "post_status": "",
             "taxonomy": "",
-            "return_format": "object",
+            "return_format": "id",
             "multiple": 0,
             "allow_null": 0,
             "ui": 1
@@ -174,5 +214,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688231727
+    "modified": 1688323837
 }

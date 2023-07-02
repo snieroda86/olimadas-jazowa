@@ -213,6 +213,12 @@ function web14devsn_scripts() {
 	// Flags
 	wp_enqueue_style( 'web14devsn-flags-css','https://jsuites.net/v4/jsuites.css', array(), _S_VERSION );
 
+	// Datepicker
+	wp_enqueue_style( 'web14devsn-datepicker-css','https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css', array(), _S_VERSION );
+
+	// Autocomplete
+	wp_enqueue_style( 'web14devsn-autocomplete-css','https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css', array(), _S_VERSION );
+
 	wp_enqueue_style( 'web14devsn-style-css', get_template_directory_uri().'/dist/css/style.css', array(), _S_VERSION );
 
 
@@ -227,6 +233,11 @@ function web14devsn_scripts() {
 	wp_enqueue_script( 'web14devsn-datatables-js','//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js', array("jquery"), _S_VERSION , true);
 	// Bootstrap select
 	wp_enqueue_script( 'web14devsn-bootstrap-select-js','https://jsuites.net/v4/jsuites.js', array("jquery"), _S_VERSION , false);
+
+	// Datepicker
+	wp_enqueue_script( 'web14devsn-datepicker-js','https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js', array("jquery"), _S_VERSION , false);
+	// Autocomplete
+	wp_enqueue_script( 'web14devsn-autocomplete-js','https://code.jquery.com/ui/1.10.4/jquery-ui.js', array("jquery"), _S_VERSION , false);
 
 	wp_enqueue_script( 'web14devsn-main-js', get_template_directory_uri() . '/dist/js/main.js', array("jquery"), _S_VERSION, true );
 
@@ -290,3 +301,5 @@ function my_acf_json_save_point( $path ) {
  * 
  */
 require get_template_directory() . '/inc/save-custom_post-actions.php';
+require get_template_directory() . '/inc/insert_custom_post.php';
+

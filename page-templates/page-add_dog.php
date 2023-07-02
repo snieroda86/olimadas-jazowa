@@ -32,17 +32,17 @@ get_header();
 			?>
 
             <!-- Post insert form start -->
-            <form method="post" enctype="multipart/form-data" action="">
+            <form method="post" class="one-line-border-form" enctype="multipart/form-data" action="">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 pb-3">
                             <!-- Dog name -->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label for="dog-name">Dog name</label>
                                 <input type="text" name="post_title" class="form-control" id="dog-name" placeholder="Dog name">
                             </div>
                             <!-- Gender -->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label for="dog-gender">Gender</label>
                                 <select class="form-control" id="dog-gender">
                                   <option disabled selected value> -- select gender -- </option>
@@ -52,25 +52,25 @@ get_header();
                             </div>
 
                             <!-- Owner name-->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label for="owner-name">Owner name</label>
                                 <input type="text" name="wlasciciel" class="form-control" id="owner-name" placeholder="Owner name">
                             </div>
 
                             <!-- Owner country -->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label>Owner's nationality</label>
                                 <div id="owner-dropdown"></div>
                             </div>
 
                              <!-- Breeder name -->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label for="breeder-name">Breeder name</label>
                                 <input type="text" name="hodowca" class="form-control" id="breeder-name" placeholder="Breeder name">
                             </div>
 
                             <!-- Breeder country -->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label>Breeder's nationality</label>
                                 <div id="breeder-dropdown"></div>
                             </div>
@@ -79,36 +79,31 @@ get_header();
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 pb-3">
                             <!-- Sire -->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label for="sire">Sire</label>
                                 <input type="text" name="ojciec_sire" class="form-control" id="sire" placeholder="Search for sire">
                             </div>
                             <!-- Dam -->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label for="dam">Dam</label>
                                 <input type="text" name="matka_dam" class="form-control" id="dam" placeholder="Search for dam">
                             </div>
 
                             <!-- Birth date-->
-                            <div class="form-group">
-                                <label for="birth-date">Birth date</label>
-                                <div class="datepicker date input-group">
-                                    <input type="text" name="data_urodzenia" placeholder="Choose Date" class="form-control" id="birth-date">
-                                    <div class="input-group-append">
-                                      <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                                    </div>
-                                </div>
+                            <div class="form-group mb-4">
+                                <label >Birth date</label>
+                                <input type="text" name="data_urodzenia" placeholder="Choose Date" class="form-control datepicker" id="birth-date">
 
                             </div>
 
                             <!-- Titles -->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label for="titles">Titles (optional)</label>
-                                <textarea class="form-control" id="titles" name="tytuly" style="height:126px"></textarea>
+                                <textarea class="form-control" id="titles" name="tytuly" rows="5"></textarea>
                             </div>
 
                             <!-- Photo -->
-                            <div class="form-group">
+                            <div class="form-group mb-4">
                                 <label for="dog-photo">Dog photo</label>
                                 <input type="file" class="form-control-file" id="dog-photo">
                             </div>
@@ -403,7 +398,21 @@ get_header();
                 language: "en",
                 autoclose: true,
                 format: "dd/mm/yyyy"
-              });
+            });
+
+            // Autocomplete 
+
+            // Sire autocomplete
+            var availableTutorials  =  [
+               "ActionScript",
+               "Bootstrap",
+               "C",
+               "C++",
+            ];
+            $( "#sire" ).autocomplete({
+               source: availableTutorials
+            });
+
 
         })
 

@@ -1,0 +1,33 @@
+form.one-line-border-form input:not([type="submit"]):not([type="file"]) ,form.one-line-border-form select {
+  border: none !important;
+  border-bottom: 1px solid $light-grey !important;
+  box-shadow: none !important; 
+  border-radius: 0 !important;
+  outline: none !important;
+}
+
+form.one-line-border-form textarea {
+  border: 1px solid $light-grey !important;
+  box-shadow: none !important; 
+  border-radius: 0 !important;
+  outline: none !important;
+
+}
+form.one-line-border-form label{
+	font-weight: 600;
+	font-size: 18px;
+}
+form.one-line-border-form input::placeholder{
+	color: $gold;
+}
+
+.dog-photo-container{
+	label{
+		display: block;
+		max-width: 200px;
+	    margin: 0 auto 15px;
+		text-align: center;
+	    word-wrap: break-word;
+		color: #1a4756;
+	}
+}

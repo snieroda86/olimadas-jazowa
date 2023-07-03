@@ -8,18 +8,142 @@
  */
 
 get_header();
+
 ?>
+
+<style type="text/css">
+    .dog-photo-container{
+        width: 100%;
+        /*margin: 50px auto;*/
+        /*font-family: sans-serif;*/
+    }
+
+    .dog-photo-container label{
+        display: block;
+        max-width: 100%;
+        /*margin: 0 auto 15px;*/
+        text-align: left;
+        word-wrap: break-word;
+        color: #231f20;
+    }
+
+    .dog-photo-container .hidden, .dog-photo-container #uploadImg:not(.hidden) + label{
+        display: none;
+    }
+
+    #file{
+        display: none;
+        /*margin: 0 auto;*/
+    }
+
+    #upload {
+      display: block;
+      padding: 10px 25px;
+      border: 0;
+      /*margin: 0 auto;*/
+      font-size: 15px;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      background: #231f20;
+      color: #fff;
+      outline: none;
+      transition: .3s ease-in-out;
+    }
+
+    #upload:hover, #upload:focus {
+      background: #231f20;
+    }
+
+    #upload:active {
+      background: #b37f2b;
+      transition: .1s ease-in-out;
+    }
+
+
+    .dog-photo-container img{
+        display: block;
+        margin: 15px 0;
+    }
+</style>
 
 	<main id="primary" class="site-main">
 		<?php  get_template_part( 'template-parts/page', 'header' ); ?>
         <div class="container-lg page-container-sn">
             
 			<?php 
-            // if(isset($_POST['hodowca'])){
-            //     echo 'Hodowca: ' .$_POST['hodowca'].'<br><br>';
-            //     echo 'Właściciel: ' .$_POST['wlasciciel'].'<br><br>';
+            $post_title = '';
+            $gender = '';
+            $wlasciciel = '';
+            $owner_country = '';
+            $hodowca = '';
+            $breeder_country = '';
+            $ojciec_sire = '';
+            $matka_dam = '';
+            $data_urodzenia = '';
+            $tytuly = '';
 
-            // }
+            if(isset($_POST['insert_rodowod_psa'])){
+                $post_title = $_POST['post_title'];
+                $gender = $_POST['gender'];
+                $wlasciciel = $_POST['wlasciciel'];
+                $owner_country = $_POST['owner_country'];
+                $hodowca = $_POST['hodowca'];
+                $breeder_country = $_POST['breeder_country'];
+                $ojciec_sire = $_POST['ojciec_sire'];
+                $matka_dam = $_POST['matka_dam'];
+                $data_urodzenia = $_POST['data_urodzenia'];
+                $tytuly = $_POST['tytuly'];
+                $dog_photo = $_FILES['dog_photo'];
+
+                // Validation
+                $validation_errors = [];
+                if(empty($post_title)){
+                    $validation_errors[] = 'Dog name field is required';
+                }
+
+                if(empty($gender)){
+                    $validation_errors[] = 'Gender field is required';
+                }
+                if(empty($wlasciciel)){
+                    $validation_errors[] = 'Owner name field is required';
+                }
+                if(empty($owner_country)){
+                    $validation_errors[] = 'Owner country field is required';
+                }
+
+                if(empty($hodowca)){
+                    $validation_errors[] = 'Breeder name field is required';
+                }
+
+                if(empty($breeder_country)){
+                    $validation_errors[] = 'Breeder country field is required';
+                }
+
+                if(empty($ojciec_sire)){
+                    $validation_errors[] = 'Sire field is required';
+                }
+
+                if(empty($matka_dam)){
+                    $validation_errors[] = 'Dam field is required';
+                }
+                if(empty($data_urodzenia)){
+                    $validation_errors[] = 'Birth date field is required';
+                }
+
+                // Chceck errors
+                if(!empty($validation_errors) && count($validation_errors) > 0){ ?>
+                    <ul class="errors-list list-style-none mt-4 list-group"> 
+                        <?php 
+                        foreach ($validation_errors as $error) { ?>
+                            <li><div class="alert alert-danger" role="alert"><?php echo $error;  ?></div></li>
+                        <?php }
+                        ?>
+                    </ul>
+                <?php }else{
+                    // Validation completed
+                }
+
+            }
 
              ?>
 			<?php
@@ -31,6 +155,22 @@ get_header();
 			endwhile; // End of the loop.
 			?>
 
+            <!-- Autocomplete data -->
+            <?php 
+            $ownersArr = getAllOwners();
+            $ownersJSON = json_encode($ownersArr);
+            // Breeders
+            $breedersArr = getAllBreeders();
+            $breedersJSON = json_encode($breedersArr);
+            // Sire
+            $sireArr = getAllSire();
+            $sireJSON = json_encode($sireArr);
+            // Sire
+            $damArr = getAllDam();
+            $damJSON = json_encode($damArr);
+
+            ?>
+
             <!-- Post insert form start -->
             <form method="post" class="one-line-border-form" enctype="multipart/form-data" action="">
                 <div class="container">
@@ -39,22 +179,22 @@ get_header();
                             <!-- Dog name -->
                             <div class="form-group mb-4">
                                 <label for="dog-name">Dog name</label>
-                                <input type="text" name="post_title" class="form-control" id="dog-name" placeholder="Dog name">
+                                <input type="text" name="post_title" value="<?php echo $post_title; ?>"  class="form-control" id="dog-name" placeholder="Dog name" required>
                             </div>
                             <!-- Gender -->
                             <div class="form-group mb-4">
                                 <label for="dog-gender">Gender</label>
-                                <select class="form-control" id="dog-gender">
+                                <select class="form-control" id="dog-gender" name="gender" required>
                                   <option disabled selected value> -- select gender -- </option>
-                                  <option value="male">Male</option>
-                                  <option  value="female">Female</option>
+                                  <option value="male" <?php if ($gender === 'male') echo 'selected'; ?>>Male</option>
+                                  <option  value="female" <?php if ($gender === 'female') echo 'selected'; ?>>Female</option>
                                 </select>
                             </div>
 
                             <!-- Owner name-->
                             <div class="form-group mb-4">
                                 <label for="owner-name">Owner name</label>
-                                <input type="text" name="wlasciciel" class="form-control" id="owner-name" placeholder="Owner name">
+                                <input type="text" value="<?php echo $wlasciciel; ?>" name="wlasciciel" class="form-control" id="owner-name" placeholder="Owner name" required>
                             </div>
 
                             <!-- Owner country -->
@@ -66,7 +206,7 @@ get_header();
                              <!-- Breeder name -->
                             <div class="form-group mb-4">
                                 <label for="breeder-name">Breeder name</label>
-                                <input type="text" name="hodowca" class="form-control" id="breeder-name" placeholder="Breeder name">
+                                <input type="text" name="hodowca" value="<?php echo $hodowca; ?>" class="form-control" id="breeder-name" placeholder="Breeder name" required>
                             </div>
 
                             <!-- Breeder country -->
@@ -81,31 +221,36 @@ get_header();
                             <!-- Sire -->
                             <div class="form-group mb-4">
                                 <label for="sire">Sire</label>
-                                <input type="text" name="ojciec_sire" class="form-control" id="sire" placeholder="Search for sire">
+                                <input type="text" name="ojciec_sire" value="<?php echo $ojciec_sire; ?>" class="form-control" id="sire" placeholder="Search for sire" required>
                             </div>
                             <!-- Dam -->
                             <div class="form-group mb-4">
                                 <label for="dam">Dam</label>
-                                <input type="text" name="matka_dam" class="form-control" id="dam" placeholder="Search for dam">
+                                <input type="text" name="matka_dam" value="<?php echo $matka_dam; ?>" class="form-control" id="dam" placeholder="Search for dam" required>
                             </div>
 
                             <!-- Birth date-->
                             <div class="form-group mb-4">
                                 <label >Birth date</label>
-                                <input type="text" name="data_urodzenia" placeholder="Choose Date" class="form-control datepicker" id="birth-date">
+                                <input type="text" name="data_urodzenia" value="<?php echo $data_urodzenia; ?>" placeholder="Choose Date" class="form-control datepicker" id="birth-date" required>
 
                             </div>
 
                             <!-- Titles -->
                             <div class="form-group mb-4">
                                 <label for="titles">Titles (optional)</label>
-                                <textarea class="form-control" id="titles" name="tytuly" rows="5"></textarea>
+                                <textarea class="form-control" id="titles" name="tytuly" rows="5"><?php echo $tytuly; ?></textarea>
                             </div>
 
                             <!-- Photo -->
-                            <div class="form-group mb-4">
-                                <label for="dog-photo">Dog photo</label>
-                                <input type="file" class="form-control-file" id="dog-photo">
+                            <div class="form-group mb-4 dog-photo-container">
+                               
+                                <label class="label" for="input">Dog photo (optional)</label>
+
+                                <div class="input">
+                                    <input name="dog_photo" id="file" type="file">
+                                </div>
+                                
                             </div>
 
                         </div>
@@ -113,8 +258,8 @@ get_header();
                     </div>
                 </div>
                 <!-- Submit btn -->
-                <div>
-                    <input type="submit" name="insert_rodowod_psa" value="Create a dog's pedigree" class="btn btn-gold text-white">
+                <div class="pt-3 pb-5 text-center">
+                    <input type="submit" name="insert_rodowod_psa" value="Create a dog's pedigree" class=" btn-gold text-white btn-main-sn">
                 </div>
             </form>
             <!-- Post insert form end -->
@@ -400,18 +545,75 @@ get_header();
                 format: "dd/mm/yyyy"
             });
 
-            // Autocomplete 
+             
+            /*
+            * Autocomplete 
+            */
+
+            // Owners autocomplete
+            var ownersList = <?php echo $ownersJSON; ?>;
+            $( "#owner-name" ).autocomplete({
+               source: ownersList
+            });
+
+            // Breeders autocomplete
+            var breedersList = <?php echo $breedersJSON; ?>;
+            $( "#breeder-name" ).autocomplete({
+               source: breedersList
+            });
+            
+            // Sire autocomplete
+            var sireList = <?php echo $sireJSON; ?>;
+            $( "#sire" ).autocomplete({
+               source: sireList
+            });
+
+            // Dam autocomplete
+            var damList = <?php echo $damJSON; ?>;
+            $( "#dam" ).autocomplete({
+               source: damList
+            });
 
             // Sire autocomplete
-            var availableTutorials  =  [
-               "ActionScript",
-               "Bootstrap",
-               "C",
-               "C++",
-            ];
-            $( "#sire" ).autocomplete({
-               source: availableTutorials
+           
+            // $( "#sire" ).autocomplete({
+            //    source: availableTutorials
+            // });
+
+
+            // Upload image
+            var container = $('.dog-photo-container'), inputFile = $('#file'), img, btn, txt = 'Browse', txtAfter = 'Browse another photo';
+            
+            if(!container.find('#upload').length){
+                container.find('.input').append('<input type="button" value="'+txt+'" id="upload">');
+                btn = $('#upload');
+                container.prepend('<img src="" class="hidden" alt="Uploaded file" id="uploadImg" width="100">');
+                img = $('#uploadImg');
+            }
+                    
+            btn.on('click', function(){
+                img.animate({opacity: 0}, 300);
+                inputFile.click();
             });
+
+            inputFile.on('change', function(e){
+                container.find('label').html( inputFile.val() );
+                
+                var i = 0;
+                for(i; i < e.originalEvent.srcElement.files.length; i++) {
+                    var file = e.originalEvent.srcElement.files[i], 
+                        reader = new FileReader();
+
+                    reader.onloadend = function(){
+                        img.attr('src', reader.result).animate({opacity: 1}, 700);
+                    }
+                    reader.readAsDataURL(file);
+                    img.removeClass('hidden');
+                }
+                
+                btn.val( txtAfter );
+            });
+            // Upload image end
 
 
         })

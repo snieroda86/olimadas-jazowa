@@ -302,4 +302,6 @@ function my_acf_json_save_point( $path ) {
  */
 require get_template_directory() . '/inc/save-custom_post-actions.php';
 require get_template_directory() . '/inc/insert_custom_post.php';
+require get_template_directory() . '/inc/custom-queries.php';
+
 

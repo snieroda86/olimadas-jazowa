@@ -14,20 +14,21 @@ form.one-line-border-form textarea {
 
 }
 form.one-line-border-form label{
-	font-weight: 600;
+	font-weight: 600; 
 	font-size: 18px;
 }
 form.one-line-border-form input::placeholder{
 	color: $gold;
 }
+form.one-line-border-form input[type="submit"]{
+	border:0 !important;
+	box-shadow:0 !important;
+	padding-left: 25px;
+	padding-right: 25px;
+	max-width: 300px;
+	margin:auto;
 
-.dog-photo-container{
-	label{
-		display: block;
-		max-width: 200px;
-	    margin: 0 auto 15px;
-		text-align: center;
-	    word-wrap: break-word;
-		color: #1a4756;
-	}
 }
+ 
+
+   

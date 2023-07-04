@@ -7,6 +7,8 @@
  * @package web14devsn
  */
 
+include get_template_directory() . '/inc/insert_custom_post.php';
+
 get_header();
 
 ?>
@@ -70,85 +72,6 @@ get_header();
 		<?php  get_template_part( 'template-parts/page', 'header' ); ?>
         <div class="container-lg page-container-sn">
             
-			<?php 
-            $post_title = '';
-            $gender = '';
-            $wlasciciel = '';
-            $owner_country = '';
-            $hodowca = '';
-            $breeder_country = '';
-            $ojciec_sire = '';
-            $matka_dam = '';
-            $data_urodzenia = '';
-            $tytuly = '';
-
-            if(isset($_POST['insert_rodowod_psa'])){
-                $post_title = $_POST['post_title'];
-                $gender = $_POST['gender'];
-                $wlasciciel = $_POST['wlasciciel'];
-                $owner_country = $_POST['owner_country'];
-                $hodowca = $_POST['hodowca'];
-                $breeder_country = $_POST['breeder_country'];
-                $ojciec_sire = $_POST['ojciec_sire'];
-                $matka_dam = $_POST['matka_dam'];
-                $data_urodzenia = $_POST['data_urodzenia'];
-                $tytuly = $_POST['tytuly'];
-                $dog_photo = $_FILES['dog_photo'];
-
-                // Validation
-                $validation_errors = [];
-                if(empty($post_title)){
-                    $validation_errors[] = 'Dog name field is required';
-                }
-
-                if(empty($gender)){
-                    $validation_errors[] = 'Gender field is required';
-                }
-                if(empty($wlasciciel)){
-                    $validation_errors[] = 'Owner name field is required';
-                }
-                if(empty($owner_country)){
-                    $validation_errors[] = 'Owner country field is required';
-                }
-
-                if(empty($hodowca)){
-                    $validation_errors[] = 'Breeder name field is required';
-                }
-
-                if(empty($breeder_country)){
-                    $validation_errors[] = 'Breeder country field is required';
-                }
-
-                if(empty($ojciec_sire)){
-                    $validation_errors[] = 'Sire field is required';
-                }
-
-                if(empty($matka_dam)){
-                    $validation_errors[] = 'Dam field is required';
-                }
-                if(empty($data_urodzenia)){
-                    $validation_errors[] = 'Birth date field is required';
-                }
-
-                // Chceck errors
-                $validation_check = 'false';
-                if(!empty($validation_errors) && count($validation_errors) > 0){ 
-                    ?>
-                    <ul class="errors-list list-style-none mt-4 list-group"> 
-                        <?php 
-                        foreach ($validation_errors as $error) { ?>
-                            <li><div class="alert alert-danger" role="alert"><?php echo $error;  ?></div></li>
-                        <?php }
-                        ?>
-                    </ul>
-                <?php }else{
-                    // Validation completed
-                    $validation_check = 'false';
-                }
-
-            }
-
-             ?>
 			<?php
 			while ( have_posts() ) :
 				the_post();
@@ -174,9 +97,21 @@ get_header();
 
             ?>
 
+            <?php 
+
+            // Validation errors
+            if(!empty($validation_errors) && count($validation_errors) > 0){ ?>
+                <ul class="errors-list list-style-none mt-4 list-group"> 
+                    <?php 
+                    foreach ($validation_errors as $error) { ?>
+                        <li><div class="alert alert-danger" role="alert"><?php echo $error;  ?></div></li>
+                    <?php }
+                    ?>
+                </ul>
+            <?php } ?>
+
             <!-- Post insert form start -->
             <form method="post" class="one-line-border-form" enctype="multipart/form-data" action="">
-                <input type="hidden" name="validation_check" value="<?php echo $validation_check; ?>">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 pb-3">
@@ -528,10 +463,11 @@ get_header();
                 autocomplete: true,
                 multiple: false,
                 width: '100%',
+                value : 'Mołdawia'
             });
             var ownerDropdown = document.querySelector("#owner-dropdown input");
             ownerDropdown.setAttribute('name', 'owner_country');
-
+           
             // Breeder
             jSuites.dropdown(document.getElementById('breeder-dropdown'), {
                 data: countries,

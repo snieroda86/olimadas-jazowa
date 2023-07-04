@@ -114,7 +114,7 @@
             "label": "Ojciec (SIRE)",
             "name": "ojciec_sire",
             "aria-label": "",
-            "type": "post_object",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -123,22 +123,18 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "rodowody_psow"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 1
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_649edc64c6f7a",
             "label": "Matka (DAM)",
             "name": "matka_dam",
             "aria-label": "",
-            "type": "post_object",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -147,15 +143,11 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "rodowody_psow"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "return_format": "id",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 1
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_649edcdfc6f7b",
@@ -214,5 +206,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688323837
+    "modified": 1688482705
 }

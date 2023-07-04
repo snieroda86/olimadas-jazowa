@@ -25,7 +25,7 @@ if(isset($_POST['insert_rodowod_psa'])){
     $matka_dam = $_POST['matka_dam'];
     $data_urodzenia = $_POST['data_urodzenia'];
     $tytuly = $_POST['tytuly'];
-    $dog_photo = $_FILES['dog_photo'];
+    $p_image = $_FILES['dog_photo'];
 
     // Validation
     $validation_errors = [];
@@ -118,6 +118,45 @@ if(isset($_POST['insert_rodowod_psa'])){
                 update_field('matka_dam', $matka_dam , $post_id);
                 update_field('data_urodzenia', $data_urodzenia , $post_id);
                 update_field('tytuly', $tytuly , $post_id);
+
+                /*
+                ** Upload image
+                */ 
+
+                if (isset($_FILES['dog_photo']) && !empty($_FILES['dog_photo']['name'])) {
+                    // Check image size
+                    $image_size = $p_image['size'] / 1024; // Rozmiar w kilobajtach
+                    if ($image_size > 300) {
+                        $validation_errors[] = 'Error: photo size cannot exceed 300kb';
+                        return;
+                    }
+
+                    // Sprawdzanie typu obrazka
+                    $image_type = strtolower(pathinfo($p_image['name'], PATHINFO_EXTENSION));
+                    if (!in_array($image_type, array('jpg', 'jpeg', 'png', 'gif'))) {
+                        $validation_errors[] = "Error: wrong image type ( allowed types: 'jpg', 'jpeg', 'png')";
+                        return;
+                    }
+
+
+
+                    $upload_dir = wp_upload_dir();
+                    $file = $upload_dir['path'] . '/' . $p_image['name'];
+                    move_uploaded_file( $p_image['tmp_name'], $file );
+                    $wp_filetype = wp_check_filetype( basename( $file ), null );
+                    $attachment = array(
+                        'post_mime_type' => $wp_filetype['type'],
+                        'post_title' => preg_replace( '/\.[^.]+$/', '', basename( $file ) ),
+                        'post_content' => '',
+                        'post_status' => 'inherit'
+                    );
+                    $attach_id = wp_insert_attachment( $attachment, $file, $post_id );
+                    require_once( ABSPATH . 'wp-admin/includes/image.php' );
+                    $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+                    wp_update_attachment_metadata( $attach_id, $attach_data );
+                    set_post_thumbnail( $post_id, $attach_id );
+                }
+
 
                 // Redirect
                 $redirect_url = get_permalink( $post_id);

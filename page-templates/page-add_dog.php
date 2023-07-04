@@ -131,7 +131,9 @@ get_header();
                 }
 
                 // Chceck errors
-                if(!empty($validation_errors) && count($validation_errors) > 0){ ?>
+                $validation_check = 'false';
+                if(!empty($validation_errors) && count($validation_errors) > 0){ 
+                    ?>
                     <ul class="errors-list list-style-none mt-4 list-group"> 
                         <?php 
                         foreach ($validation_errors as $error) { ?>
@@ -141,6 +143,7 @@ get_header();
                     </ul>
                 <?php }else{
                     // Validation completed
+                    $validation_check = 'false';
                 }
 
             }
@@ -173,6 +176,7 @@ get_header();
 
             <!-- Post insert form start -->
             <form method="post" class="one-line-border-form" enctype="multipart/form-data" action="">
+                <input type="hidden" name="validation_check" value="<?php echo $validation_check; ?>">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12 pb-3">

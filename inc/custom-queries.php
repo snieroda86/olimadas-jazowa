@@ -82,3 +82,34 @@ function getAllDam(){
 
 	return $damArr; 
 }
+
+/*
+* Get page / post object by title
+*/
+
+function getPageByTitleSN( $title , $type){
+	$args = array(
+	    'post_type'      => $type,
+	    'post_status'    => 'publish',
+	    'posts_per_page' => 1,
+	    'title'          => $title
+	);
+
+	$query = new WP_Query( $args );
+
+	if ( $query->have_posts() ) {
+	    while ( $query->have_posts() ) {
+	        $query->the_post();
+
+	        $post_id = get_the_ID();
+
+	    }
+
+	    wp_reset_postdata();
+	} else {
+	    $post_id = null;
+	}
+
+	return $post_id;
+
+}

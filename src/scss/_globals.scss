@@ -87,3 +87,16 @@ p{
 .dog-list-warpper{
 	min-height: 70vh;
 }
+
+.table-dog-info{
+	th{
+		background: rgba(0,0,0,.03);
+	}
+}
+
+.bg-black{
+	background: $black;
+} 
+.bg-light-grey{
+	background: #eee;
+}  

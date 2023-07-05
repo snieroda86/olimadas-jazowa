@@ -115,3 +115,38 @@ function getPageByTitleSN( $title , $type){
 	return $post_id;
 
 }
+
+// Dog offspring
+function getDogOffspring( $post_title , $gender ){
+	if($gender == 'male'){
+
+		$offspring = get_posts(array(
+		    'post_type' => 'rodowody_psow',
+		    'posts_per_page' => -1 ,
+		    'meta_query' => array(
+		        array(
+		            'key' => 'ojciec_sire',
+		            'value' => $post_title ,
+		            'compare' => '='
+		        )
+		    )
+		));
+
+	}else{
+
+		$offspring = get_posts(array(
+		    'post_type' => 'rodowody_psow',
+		    'posts_per_page' => -1 ,
+		    'meta_query' => array(
+		        array(
+		            'key' => 'matka_dam',
+		            'value' => $post_title ,
+		            'compare' => '='
+		        )
+		    )
+		));
+
+	}
+
+	return $offspring; 
+}

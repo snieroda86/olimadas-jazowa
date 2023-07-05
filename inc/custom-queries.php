@@ -45,6 +45,7 @@ function getAllBreeders(){
 function getAllSire(){
 	$posts = get_posts(array(
 	    'post_type' => 'rodowody_psow',
+	    'posts_per_page' => -1 ,
 	    'meta_query' => array(
 	        array(
 	            'key' => 'plec_psa',
@@ -66,6 +67,7 @@ function getAllSire(){
 function getAllDam(){
 	$posts = get_posts(array(
 	    'post_type' => 'rodowody_psow',
+	    'posts_per_page' => -1 ,
 	    'meta_query' => array(
 	        array(
 	            'key' => 'plec_psa',

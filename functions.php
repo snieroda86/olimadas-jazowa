@@ -245,6 +245,15 @@ function web14devsn_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'web14devsn_scripts' );
 
+/*
+ * Login page style
+ */
+function my_login_stylesheet() {
+    wp_enqueue_style( 'custom-login-sn', get_template_directory_uri().'/dist/css/style-login.css' );
+    // wp_enqueue_script( 'custom-login', get_stylesheet_directory_uri() . '/style-login.js' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
 /**
  * Customizer additions.
  */
@@ -301,7 +310,9 @@ function my_acf_json_save_point( $path ) {
  * 
  */
 require get_template_directory() . '/inc/save-custom_post-actions.php';
-// require get_template_directory() . '/inc/insert_custom_post.php';
 require get_template_directory() . '/inc/custom-queries.php';
+// require get_template_directory() . '/inc/login_page-redirect.php';
+require get_template_directory() . '/inc/customize-login_page.php';
+
 
 

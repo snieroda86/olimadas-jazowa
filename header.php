@@ -71,7 +71,15 @@
 	                    <i class="fa fa-search" aria-hidden="true"></i>
 	                  </button>
 	                </form>
-	                <a href="">
+	                <?php
+	                $account_url = ''; 
+	                if(is_user_logged_in()){
+	                	$account_url = get_permalink(77);
+	                }else{
+	                	$account_url = wp_login_url();
+	                }
+	                ?>
+	                <a href="<?php echo $account_url ?>">
 	                  <i class="fa fa-user" aria-hidden="true"></i>
 	                </a>
 	              </div>

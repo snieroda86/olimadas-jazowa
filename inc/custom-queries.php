@@ -116,6 +116,21 @@ function getPageByTitleSN( $title , $type){
 
 }
 
+// Get dog by title
+function getDogByTitleSN( $title ){
+	$args = array(
+	    'post_type'      => 'rodowody_psow',
+	    'post_status'    => 'publish',
+	    'posts_per_page' => 1,
+	    'title'          => $title
+	);
+
+	$dog = new WP_Query( $args );
+
+	return $dog;
+
+}
+
 // Dog offspring
 function getDogOffspring( $post_title , $gender ){
 	if($gender == 'male'){
@@ -158,7 +173,6 @@ function getDogSiblings( $post_id ,  $sire , $dam){
 	$siblings = null;
 
 	if(!empty($post_id) && !empty($sire) &&  !empty($dam) ){
-
 
 		$siblings = get_posts(array(
 		    'post_type' => 'rodowody_psow',

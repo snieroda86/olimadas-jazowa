@@ -1,0 +1,56 @@
+.pedigree-table{
+	width:100%;
+
+	table{
+		width:100%;
+
+		td{
+			border-spacing: 0;
+			width:20%;
+		}
+		.dog-cell-inner{
+			width:100%;
+			height:100%;
+			@include el-center;
+			padding:10px;
+			box-sizing: border-box;
+
+			.dog-cell-card{
+				padding:10px;
+				background: #fff;
+
+				a{
+					color:$black;
+					font-weight: 600;   
+				}
+			}
+		}
+
+		.dog-cell{
+			width:100%;
+			border-bottom: 1px solid #ddd; 
+			height:100%;
+			
+		}
+
+		td .dog-cell:last-child {
+			border-bottom: 0;
+		}	    
+
+		.dog-cell-5{
+			height: 60px;
+		}
+		.dog-cell-4{
+			height: 120px;
+		}	 
+		.dog-cell-3{
+			height: 240px;
+		}
+		.dog-cell-2{
+			height: 480px;
+		}
+		.dog-cell-1{
+			height: 960px;
+		}
+	}
+}

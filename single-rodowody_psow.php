@@ -116,22 +116,24 @@ get_header();
 	                    <div class="card mb-4">
 	                        <div class="card-header"><?php _e('Siblings' , 'web14devsn'); ?></div>
 	                        <div class="card-body">
-	                            <div class="row">
-	                                <div class="col-sm-6">
-	                                    <ul class="list-unstyled mb-0">
-	                                        <li><a href="#!">Web Design</a></li>
-	                                        <li><a href="#!">HTML</a></li>
-	                                        <li><a href="#!">Freebies</a></li>
-	                                    </ul>
-	                                </div>
-	                                <div class="col-sm-6">
-	                                    <ul class="list-unstyled mb-0">
-	                                        <li><a href="#!">JavaScript</a></li>
-	                                        <li><a href="#!">CSS</a></li>
-	                                        <li><a href="#!">Tutorials</a></li>
-	                                    </ul>
-	                                </div>
-	                            </div>
+	                            <?php $siblings = getDogSiblings( get_the_ID() , get_field('ojciec_sire') , get_field('matka_dam') ); ?>
+	                            <?php if ( $siblings): ?>
+	                            	<ul class="list-unstyled mb-0">
+	                        			<?php foreach( $siblings as $sibling ): ?>
+	                                   		<li style="border-bottom: 1px solid #eee;" class="pb-2 mb-3">
+	                                   			<a class="color-gold text-uppercase" href="<?php the_permalink( $sibling->ID ); ?>">
+	                                   				<strong><?php echo $sibling->post_title; ?></strong>
+	                                   			</a>
+	                                   			<div class="d-flex">
+	                                   				<span class="pr-2"><?php _e('Born date:' , 'web14devsn'); ?></span>
+	                                   				<span><?php the_field('data_urodzenia' , $sibling->ID ); ?></span>
+	                                   			</div>
+	                                   
+	                                   			
+	                                   		</li>
+	                               		<?php endforeach; ?>
+	                                </ul>
+	                            <?php endif ?>
 	                        </div>
 	                    </div>
 	                   

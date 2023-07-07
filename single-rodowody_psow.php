@@ -455,27 +455,323 @@ get_header();
 	                    			<td>
 	                    				<div class="dog-cell dog-cell-4">
 	                    					<!-- 4.1 -->
+	                    					<?php 
+	                    					if( isset($sire_3_1_id) ){
+	                    						$sire_4_1 = get_field('ojciec_sire' , $sire_3_1_id);
+	                    						if($sire_4_1){
+	                    							$get_sire_4_1 = getDogByTitleSN($sire_4_1);
+	                    							if ( $get_sire_4_1->have_posts() ) {
+														
+														$dog = $get_sire_4_1->posts[0];
+														$permalink = get_permalink($dog->ID);
+														$sire_4_1_id = $dog->ID;
+														$dog_color = get_post_meta( $sire_4_1_id , 'dog_color' , true);
+														echo '<div class="dog-cell-inner" style="background:'.$dog_color.'">';
+														echo '<div class="dog-cell-card">';
+														echo '<a href="'.$permalink.'">'.$dog->post_title.'</a>';
+														echo '</div>';
+														echo '</div>';
+														
+													}else{ ?>
+														<div class="undefined-cell-inner">
+		                    								<p class="undefined-label">Undefined</p>
+		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_3_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
+		                    							</div>
+													<?php }
+	                    						}else{ ?>
+	                    							<div class="undefined-cell-inner">
+	                    								<p class="undefined-label">Undefined</p>
+	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_3_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
+	                    							</div>
+	                    							
+	                    						<?php }
+	                    					}else{
+	                    						echo '<div class="undefined-q-mark">';
+	                    						echo '<p>Undefined</p>';
+	                    						echo '</div>';
+	                    					}
+	            
+	                    					?>
 	                    				</div>
 	                    				<div class="dog-cell dog-cell-4">
 	                    					<!-- 4.2 -->
+	                    					<?php 
+	                    					if( isset($sire_3_1_id) ){
+	                    						$dam_4_2 = get_field('matka_dam' , $sire_3_1_id);
+	                    						if($dam_4_2){
+	                    							$get_dam_4_2 = getDogByTitleSN($dam_4_2);
+	                    							if ( $get_dam_4_2->have_posts() ) {
+														
+														$dog = $get_dam_4_2->posts[0];
+														$permalink = get_permalink($dog->ID);
+														$dam_4_2_id = $dog->ID;
+														$dog_color = get_post_meta( $dam_4_2_id , 'dog_color' , true);
+														echo '<div class="dog-cell-inner" style="background:'.$dog_color.'">';
+														echo '<div class="dog-cell-card">';
+														echo '<a href="'.$permalink.'">'.$dog->post_title.'</a>';
+														echo '</div>';
+														echo '</div>';
+														
+													}else{ ?>
+														<div class="undefined-cell-inner">
+		                    								<p class="undefined-label">Undefined</p>
+		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_3_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
+		                    							</div>
+													<?php }
+	                    						}else{ ?>
+	                    							<div class="undefined-cell-inner">
+	                    								<p class="undefined-label">Undefined</p>
+	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_3_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
+	                    							</div>
+	                    							
+	                    						<?php }
+	                    					}else{
+	                    						echo '<div class="undefined-q-mark">';
+	                    						echo '<p>Undefined</p>';
+	                    						echo '</div>';
+	                    					}
+	            
+	                    					?>
 	                    				</div>
 	                    				<div class="dog-cell dog-cell-4">
 	                    					<!-- 4.3 -->
+	                    					<?php 
+	                    					if( isset($dam_3_2_id) ){
+	                    						$sire_4_3 = get_field('ojciec_sire' , $dam_3_2_id);
+	                    						if($sire_4_3){
+	                    							$get_sire_4_3 = getDogByTitleSN($sire_4_3);
+	                    							if ( $get_sire_4_3->have_posts() ) {
+														
+														$dog = $get_sire_4_3->posts[0];
+														$permalink = get_permalink($dog->ID);
+														$sire_4_3_id = $dog->ID;
+														$dog_color = get_post_meta( $sire_4_3_id , 'dog_color' , true);
+														echo '<div class="dog-cell-inner" style="background:'.$dog_color.'">';
+														echo '<div class="dog-cell-card">';
+														echo '<a href="'.$permalink.'">'.$dog->post_title.'</a>';
+														echo '</div>';
+														echo '</div>';
+														
+													}else{ ?>
+														<div class="undefined-cell-inner">
+		                    								<p class="undefined-label">Undefined</p>
+		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_3_2_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
+		                    							</div>
+													<?php }
+	                    						}else{ ?>
+	                    							<div class="undefined-cell-inner">
+	                    								<p class="undefined-label">Undefined</p>
+	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_3_2_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
+	                    							</div>
+	                    							
+	                    						<?php }
+	                    					}else{
+	                    						echo '<div class="undefined-q-mark">';
+	                    						echo '<p>Undefined</p>';
+	                    						echo '</div>';
+	                    					}
+	            
+	                    					?>
 	                    				</div>
 	                    				<div class="dog-cell dog-cell-4">
 	                    					<!-- 4.4 -->
+	                    					<?php 
+	                    					if( isset($dam_3_2_id) ){
+	                    						$dam_4_4 = get_field('matka_dam' , $dam_3_2_id);
+	                    						if($dam_4_4){
+	                    							$get_dam_4_4 = getDogByTitleSN($dam_4_4);
+	                    							if ( $get_dam_4_4->have_posts() ) {
+														
+														$dog = $get_dam_4_4->posts[0];
+														$permalink = get_permalink($dog->ID);
+														$dam_4_4_id = $dog->ID;
+														$dog_color = get_post_meta( $dam_4_4_id , 'dog_color' , true);
+														echo '<div class="dog-cell-inner" style="background:'.$dog_color.'">';
+														echo '<div class="dog-cell-card">';
+														echo '<a href="'.$permalink.'">'.$dog->post_title.'</a>';
+														echo '</div>';
+														echo '</div>';
+														
+													}else{ ?>
+														<div class="undefined-cell-inner">
+		                    								<p class="undefined-label">Undefined</p>
+		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_3_2_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
+		                    							</div>
+													<?php }
+	                    						}else{ ?>
+	                    							<div class="undefined-cell-inner">
+	                    								<p class="undefined-label">Undefined</p>
+	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_3_2_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
+	                    							</div>
+	                    							
+	                    						<?php }
+	                    					}else{
+	                    						echo '<div class="undefined-q-mark">';
+	                    						echo '<p>Undefined</p>';
+	                    						echo '</div>';
+	                    					}
+	            
+	                    					?>
 	                    				</div>
 	                    				<div class="dog-cell dog-cell-4">
 	                    					<!-- 4.5 -->
+	                    					<?php 
+	                    					if( isset($sire_3_3_id) ){
+	                    						$sire_4_5 = get_field('ojciec_sire' , $sire_3_3_id);
+	                    						if($sire_4_5){
+	                    							$get_sire_4_5 = getDogByTitleSN($sire_4_5);
+	                    							if ( $get_sire_4_5->have_posts() ) {
+														
+														$dog = $get_sire_4_5->posts[0];
+														$permalink = get_permalink($dog->ID);
+														$sire_4_5_id = $dog->ID;
+														$dog_color = get_post_meta( $sire_4_5_id , 'dog_color' , true);
+														echo '<div class="dog-cell-inner" style="background:'.$dog_color.'">';
+														echo '<div class="dog-cell-card">';
+														echo '<a href="'.$permalink.'">'.$dog->post_title.'</a>';
+														echo '</div>';
+														echo '</div>';
+														
+													}else{ ?>
+														<div class="undefined-cell-inner">
+		                    								<p class="undefined-label">Undefined</p>
+		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_3_3_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
+		                    							</div>
+													<?php }
+	                    						}else{ ?>
+	                    							<div class="undefined-cell-inner">
+	                    								<p class="undefined-label">Undefined</p>
+	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_3_3_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
+	                    							</div>
+	                    							
+	                    						<?php }
+	                    					}else{
+	                    						echo '<div class="undefined-q-mark">';
+	                    						echo '<p>Undefined</p>';
+	                    						echo '</div>';
+	                    					}
+	            
+	                    					?>
 	                    				</div>
 	                    				<div class="dog-cell dog-cell-4">
 	                    					<!-- 4.6 -->
+	                    					<?php 
+	                    					if( isset($sire_3_3_id) ){
+	                    						$dam_4_6 = get_field('matka_dam' , $sire_3_3_id);
+	                    						if($dam_4_6){
+	                    							$get_dam_4_6 = getDogByTitleSN($dam_4_6);
+	                    							if ( $get_dam_4_6->have_posts() ) {
+														
+														$dog = $get_dam_4_6->posts[0];
+														$permalink = get_permalink($dog->ID);
+														$dam_4_6_id = $dog->ID;
+														$dog_color = get_post_meta( $dam_4_6_id , 'dog_color' , true);
+														echo '<div class="dog-cell-inner" style="background:'.$dog_color.'">';
+														echo '<div class="dog-cell-card">';
+														echo '<a href="'.$permalink.'">'.$dog->post_title.'</a>';
+														echo '</div>';
+														echo '</div>';
+														
+													}else{ ?>
+														<div class="undefined-cell-inner">
+		                    								<p class="undefined-label">Undefined</p>
+		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_3_3_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
+		                    							</div>
+													<?php }
+	                    						}else{ ?>
+	                    							<div class="undefined-cell-inner">
+	                    								<p class="undefined-label">Undefined</p>
+	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_3_3_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
+	                    							</div>
+	                    							
+	                    						<?php }
+	                    					}else{
+	                    						echo '<div class="undefined-q-mark">';
+	                    						echo '<p>Undefined</p>';
+	                    						echo '</div>';
+	                    					}
+	            
+	                    					?>
 	                    				</div>
 	                    				<div class="dog-cell dog-cell-4">
 	                    					<!-- 4.7 -->
+	                    					<?php 
+	                    					if( isset($dam_3_4_id) ){
+	                    						$sire_4_7 = get_field('ojciec_sire' , $dam_3_4_id);
+	                    						if($sire_4_7){
+	                    							$get_sire_4_7 = getDogByTitleSN($sire_4_7);
+	                    							if ( $get_sire_4_7->have_posts() ) {
+														
+														$dog = $get_sire_4_7->posts[0];
+														$permalink = get_permalink($dog->ID);
+														$sire_4_7_id = $dog->ID;
+														$dog_color = get_post_meta( $sire_4_7_id , 'dog_color' , true);
+														echo '<div class="dog-cell-inner" style="background:'.$dog_color.'">';
+														echo '<div class="dog-cell-card">';
+														echo '<a href="'.$permalink.'">'.$dog->post_title.'</a>';
+														echo '</div>';
+														echo '</div>';
+														
+													}else{ ?>
+														<div class="undefined-cell-inner">
+		                    								<p class="undefined-label">Undefined</p>
+		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_3_4_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
+		                    							</div>
+													<?php }
+	                    						}else{ ?>
+	                    							<div class="undefined-cell-inner">
+	                    								<p class="undefined-label">Undefined</p>
+	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_3_4_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
+	                    							</div>
+	                    							
+	                    						<?php }
+	                    					}else{
+	                    						echo '<div class="undefined-q-mark">';
+	                    						echo '<p>Undefined</p>';
+	                    						echo '</div>';
+	                    					}
+	            
+	                    					?>
 	                    				</div>
 	                    				<div class="dog-cell dog-cell-4">
 	                    					<!-- 4.8 -->
+	                    					<?php 
+	                    					if( isset($dam_3_4_id) ){
+	                    						$dam_4_8 = get_field('matka_dam' , $dam_3_4_id);
+	                    						if($dam_4_8){
+	                    							$get_dam_4_8 = getDogByTitleSN($dam_4_8);
+	                    							if ( $get_dam_4_8->have_posts() ) {
+														
+														$dog = $get_dam_4_8->posts[0];
+														$permalink = get_permalink($dog->ID);
+														$dam_4_8_id = $dog->ID;
+														$dog_color = get_post_meta( $dam_4_8_id , 'dog_color' , true);
+														echo '<div class="dog-cell-inner" style="background:'.$dog_color.'">';
+														echo '<div class="dog-cell-card">';
+														echo '<a href="'.$permalink.'">'.$dog->post_title.'</a>';
+														echo '</div>';
+														echo '</div>';
+														
+													}else{ ?>
+														<div class="undefined-cell-inner">
+		                    								<p class="undefined-label">Undefined</p>
+		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_3_4_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
+		                    							</div>
+													<?php }
+	                    						}else{ ?>
+	                    							<div class="undefined-cell-inner">
+	                    								<p class="undefined-label">Undefined</p>
+	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_3_4_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
+	                    							</div>
+	                    							
+	                    						<?php }
+	                    					}else{
+	                    						echo '<div class="undefined-q-mark">';
+	                    						echo '<p>Undefined</p>';
+	                    						echo '</div>';
+	                    					}
+	            
+	                    					?>
 	                    				</div>
 	                    			</td>
 	                    			<!-- col 5 -->

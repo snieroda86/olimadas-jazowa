@@ -162,7 +162,6 @@ get_header();
 	            <!-- Pedigree table -->
 	            <div class="row">
 	            	<div class="col-12">
-	            		<h4>Sire pedigree</h4>
 	            		<!-- Sire -->
 	            		<div class="pedigree-table">
 	            			<?php 
@@ -1424,11 +1423,6 @@ get_header();
                     	
                     	</div>
 	            	</div>
-
-
-	            	<!-- Dam pedigree -->
-	            	<?php include get_template_directory().'/dam-pedigree.php' ?>
-	            	<!-- Dam pedigree end -->
                     
 	            </div>
 

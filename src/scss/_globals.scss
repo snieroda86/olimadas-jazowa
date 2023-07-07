@@ -100,3 +100,11 @@ p{
 .bg-light-grey{
 	background: #eee;
 }  
+
+.table-bordered{
+	border: 1px solid #888 !important;
+
+	td,th{
+		border: 1px solid #888 !important;     
+	}
+}

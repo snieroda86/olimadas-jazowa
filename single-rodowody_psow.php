@@ -164,6 +164,11 @@ get_header();
 	            	<div class="col-12">
 	            		<!-- Sire -->
 	            		<div class="pedigree-table">
+	            			<?php 
+
+	            			// Variables
+	            			$c_parent_url = get_permalink(89);
+	            			?>
 
 	                    	<table class="table-bordered">
 	                    		<tr>
@@ -190,7 +195,10 @@ get_header();
 														
 													}
 	                    						}else{ ?>
-	                    							<a href="#"><?php _e('Create parent'); ?></a>
+	                    							<div class="undefined-cell-inner">
+	                    								<p class="undefined-label">Undefined</p>
+	                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo get_the_ID(); ?>&sex=male"><?php _e('Create sire'); ?></a>	
+	                    							</div>
 	                    						<?php }
 	                    					?>
 	                    				</div>
@@ -208,30 +216,74 @@ get_header();
 														
 														$dog = $get_sire_2_1->posts[0];
 														$permalink = get_permalink($dog->ID);
-														$sire_1_id = $dog->ID;
-														$dog_color = get_post_meta( $sire_1_id , 'dog_color' , true);
+														$sire_2_1_id = $dog->ID;
+														$dog_color = get_post_meta( $sire_2_1_id , 'dog_color' , true);
 														echo '<div class="dog-cell-inner" style="background:'.$dog_color.'">';
 														echo '<div class="dog-cell-card">';
 														echo '<a href="'.$permalink.'">'.$dog->post_title.'</a>';
 														echo '</div>';
 														echo '</div>';
 														
-													}
+													}else{ ?>
+														<div class="undefined-cell-inner">
+		                    								<p class="undefined-label">Undefined</p>
+		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
+		                    							</div>
+													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
 	                    								<p class="undefined-label">Undefined</p>
-	                    								<a href="#"><?php _e('Create parent'); ?></a>	
+	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
-	                    						echo 'Undefined';
+	                    						echo '<div class="undefined-q-mark">';
+	                    						echo '<p>Undefined</p>';
+	                    						echo '</div>';
 	                    					}
 	            
 	                    					?>
 	                    				</div>
 	                    				<div class="dog-cell dog-cell-2">
 	                    					<!-- 2.2 -->
+	                    					<?php 
+	                    					if( isset($sire_1_id) ){
+	                    						$dam_2_1 = get_field('matka_dam' , $sire_1_id);
+	                    						if($dam_2_1){
+	                    							$get_dam_2_1 = getDogByTitleSN($dam_2_1);
+	                    							if ( $get_dam_2_1->have_posts() ) {
+														
+														$dog = $get_dam_2_1->posts[0];
+														$permalink = get_permalink($dog->ID);
+														$dam_2_1 = $dog->ID;
+														$dog_color = get_post_meta( $dam_2_1 , 'dog_color' , true);
+														echo '<div class="dog-cell-inner" style="background:'.$dog_color.'">';
+														echo '<div class="dog-cell-card">';
+														echo '<a href="'.$permalink.'">'.$dog->post_title.'</a>';
+														echo '</div>';
+														echo '</div>';
+														
+													}else{ ?>
+														<div class="undefined-cell-inner">
+		                    								<p class="undefined-label">Undefined</p>
+		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
+		                    							</div>
+													<?php }
+	                    						}else{ ?>
+	                    							<div class="undefined-cell-inner">
+	                    								<p class="undefined-label">Undefined</p>
+	                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
+	                    							</div>
+	                    							
+	                    						<?php }
+	                    					}else{
+	                    						echo '<div class="undefined-q-mark">';
+	                    						echo '<p>Undefined</p>';
+	                    						echo '</div>';
+	                    					}
+	            
+	                    					?>
 	                    				</div>
 	                    			</td>
 	                    			<!-- col 3 -->

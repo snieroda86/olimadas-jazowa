@@ -23,7 +23,41 @@
   </footer>
   <!-- footer section -->
 
+  <!-- Search data -->
+  <?php 
+
+  $allDogsArr = getAllDogs();
+  $allDogsJSON = json_encode($allDogsArr);
+  ?>
+
+
+
 <?php wp_footer(); ?>
+
+  <!-- Search modal -->
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('a[href="#search-modal-icon"]').on('click', function(event) {
+            event.preventDefault();
+            $('#search-modal-sn').addClass('open');
+            $('#search-modal-sn > form > input[type="search"]').focus();
+        });
+        
+        $('#search-modal-sn, #search-modal-sn button.close').on('click keyup', function(event) {
+            if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+                $(this).removeClass('open');
+            }
+        });
+       
+        // Autocomplete - all dogs
+        // Target: #search-input-sn
+        var allDogsList = <?php echo $allDogsJSON; ?>;
+        $( "#search-input-sn" ).autocomplete({
+           source: allDogsList
+        });
+    })
+  </script>
+  <!-- Search modal end -->
 
 </body>
 </html>

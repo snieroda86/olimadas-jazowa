@@ -311,8 +311,9 @@ function my_acf_json_save_point( $path ) {
  */
 require get_template_directory() . '/inc/save-custom_post-actions.php';
 require get_template_directory() . '/inc/custom-queries.php';
-// require get_template_directory() . '/inc/login_page-redirect.php';
 require get_template_directory() . '/inc/customize-login_page.php';
 
+// Search result - redirect
+require get_template_directory() . '/inc/search-result.php';
 
 

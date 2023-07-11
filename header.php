@@ -66,11 +66,25 @@
 			        ) );
 			        ?>
 	              <div class="quote_btn-container">
-	                <form class="form-inline">
-	                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-	                    <i class="fa fa-search" aria-hidden="true"></i>
-	                  </button>
-	                </form>
+	                <a href="#search-modal-icon"><i class="fa fa-search" aria-hidden="true"></i></a>
+	                
+	                <!-- Search form modal -->
+	                <div id="search-modal-sn">
+					    <button type="button" class="close">×</button>
+					    <div class="search-modal-wrap">
+					    	<div class="smw-inner">
+					    		<form method="POST" action="" class="text-center">
+							    	<h4 class="text-center"><?php _e('Search for dog' , 'web14devsn'); ?></h4>
+							        <input type="text" name="search_dog_name" id="search-input-sn" value="" placeholder="type dog name here..." />
+							        <div class="text-center pt-4">
+							        	<input class="btn-gold text-white btn-main-sn b-none m-auto" type="submit" value="<?php _e('Search' , 'web14devsn'); ?>">
+							        </div>
+							    </form>
+					    	</div>
+					    	
+					    </div>
+					</div>
+	                <!-- Search form modal end -->
 	                <?php
 	                $account_url = ''; 
 	                if(is_user_logged_in()){

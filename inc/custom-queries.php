@@ -85,6 +85,22 @@ function getAllDam(){
 	return $damArr; 
 }
 
+// Get all dogs
+function getAllDogs(){
+	$posts = get_posts(array(
+	    'post_type' => 'rodowody_psow',
+	    'posts_per_page' => -1 ,
+	    'post_status'    => 'publish',
+	));
+
+	$dogsArr =[];
+	foreach ($posts as $post) {
+		$dogsArr[] = $post->post_title;
+	}
+
+	return $dogsArr; 
+}
+
 /*
 * Get page / post object by title
 */

@@ -20,6 +20,11 @@ get_header();
 				<!-- Post table -->
 				<div class="col-lg-10 col-md-12 m-auto pt-5">
 					<h1 class="pb-4">Dogs list</h1>
+					<?php  if(array_key_exists('search_result', $_GET) && $_GET['search_result']== 'false'): ?>
+						<div class="alert alert-danger">
+							<?php _e('Dog not found. Check list of available dogs below' , 'web14devsn'); ?>
+						</div>
+					<?php endif; ?>
 					<div class="dog-list-warpper">
 					<?php 
 					$dogs_list = get_all_rodowody_psow();

@@ -157,6 +157,36 @@ if(isset($_POST['insert_rodowod_psa'])){
                     set_post_thumbnail( $post_id, $attach_id );
                 }
 
+                // Create new dog card if not exists in db
+                // Sire 
+                $checkSireExists = getDogByTitleSN($ojciec_sire);
+                if ( !$checkSireExists->have_posts()) {
+                    // Create dog empty card
+                    $new_sire = array(
+                        'post_title' => $ojciec_sire,
+                        'post_status' => 'publish',
+                        'post_type' => 'rodowody_psow',
+                    );
+
+                    $new_sire_id = wp_insert_post($new_sire);
+                    update_field('plec_psa', 'male' , $new_sire_id);
+
+                }
+
+                // Dam
+                $checkDamExists = getDogByTitleSN($matka_dam);
+                if ( !$checkDamExists->have_posts()) {
+                    // Create dog empty card
+                    $new_dam = array(
+                        'post_title' => $matka_dam,
+                        'post_status' => 'publish',
+                        'post_type' => 'rodowody_psow',
+                    );
+
+                    $new_dam_id = wp_insert_post($new_dam);
+                    update_field('plec_psa', 'female' , $new_dam_id);
+
+                }
 
                 // Redirect
                 $redirect_url = get_permalink( $post_id);

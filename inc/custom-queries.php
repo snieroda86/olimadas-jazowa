@@ -213,3 +213,37 @@ function getDogSiblings( $post_id ,  $sire , $dam){
 	return $siblings;
 
 }
+
+// Get all owner dogs
+function getAllOwnerDogs( $owner ){
+	$ownerDogs = get_posts(array(
+	    'post_type' => 'rodowody_psow',
+	    'posts_per_page' => -1 ,
+	    'meta_query' => array(
+	        array(
+	            'key' => 'wlasciciel',
+	            'value' => $owner ,
+	            'compare' => '='
+	        )
+	    )
+	));
+
+	return $ownerDogs; 
+}
+
+// Get all breeder dogs
+function getAllBreederDogs( $breeder ){
+	$breederDogs = get_posts(array(
+	    'post_type' => 'rodowody_psow',
+	    'posts_per_page' => -1 ,
+	    'meta_query' => array(
+	        array(
+	            'key' => 'hodowca',
+	            'value' => $breeder ,
+	            'compare' => '='
+	        )
+	    )
+	));
+
+	return $breederDogs; 
+}

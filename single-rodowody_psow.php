@@ -67,6 +67,47 @@ get_header();
 	                            <!-- Table info end -->
 	                        </div>
 	                    </div>
+
+
+	                     <!-- Owner dogs -->
+	                    <div class="card mb-4">
+	                        <div class="card-header"><?php _e('All dogs of this owner' , 'web14devsn'); ?></div>
+	                        <div class="card-body">
+	                            <?php 
+	                            $ownerDogs = getAllOwnerDogs(get_field('wlasciciel'));
+
+	                            if(!empty($ownerDogs)){
+	                            	echo '<ul class="list-unstyled mb-0">';
+	                            	foreach ($ownerDogs as $dog) {
+									    $postTitle = get_the_title($dog->ID); 
+									    $postURL = get_permalink($dog->ID);
+
+									    echo '<li style="border-bottom: 1px solid #eee;" class="pb-2 mb-3"><a class="color-gold" href="' . $postURL . '">' . $postTitle . '</a></li>'; 
+									}
+	                            	echo '</ul>';
+	                            } ?>
+	                        </div>
+	                    </div>
+
+	                    <!-- Breeder dogs -->
+	                     <div class="card mb-4">
+	                        <div class="card-header"><?php _e('All dogs of this breeder' , 'web14devsn'); ?></div>
+	                        <div class="card-body">
+	                            <?php 
+	                            $breederDogs = getAllBreederDogs(get_field('hodowca'));
+
+	                            if(!empty($breederDogs)){
+	                            	echo '<ul class="list-unstyled mb-0">';
+	                            	foreach ($breederDogs as $dog) {
+									    $postTitle = get_the_title($dog->ID); 
+									    $postURL = get_permalink($dog->ID);
+
+									    echo '<li style="border-bottom: 1px solid #eee;" class="pb-2 mb-3"><a class="color-gold" href="' . $postURL . '">' . $postTitle . '</a></li>'; 
+									}
+	                            	echo '</ul>';
+	                            } ?>
+	                        </div>
+	                    </div>
 	                   
 	                </div>
 	                <!-- Side widgets-->
@@ -154,8 +195,7 @@ get_header();
 	                        </div>
 	                    </div>
 
-	                   
-	                   
+	                  
 	                </div>
 	            </div>
 

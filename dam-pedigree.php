@@ -32,7 +32,7 @@
     						}else{ ?>
     							<div class="undefined-cell-inner">
     								<p class="undefined-label">Undefined</p>
-    								<a href="<?php echo $dam_c_parent_url ?>?child_id=<?php echo get_the_ID(); ?>&sex=male"><?php _e('Create sire'); ?></a>	
+    								<a href="<?php echo $dam_c_parent_url ?>?child_id=<?php echo get_the_ID(); ?>&sex=female"><?php _e('Create dam'); ?></a>	
     							</div>
     						<?php }
     					?>

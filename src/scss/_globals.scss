@@ -66,12 +66,22 @@ p{
 	}
 
 }
+
+.btn-long-sn{
+	max-width: 360px !important; 
+}
+.b-radius-none{
+	border-radius: 0 !important;
+}
 .btn-gold{
 	background: $gold;
 
 	&:hover{
 		background: $gold-hover;
 	}
+}
+.min-w-300{
+	min-width: 300px;
 }
 
 .btn-black{
@@ -110,4 +120,31 @@ p{
 	td,th{
 		border: 1px solid #888 !important;     
 	}
+}
+
+.tabs-wrapper-sn{
+	button.active{
+		background: $red !important;
+	}
+}
+
+.max-w-500{
+	max-width: 500px;
+	width:100%;
+}
+.dropdown-bottom-bordered{
+	width: 100%;
+    max-width: 350px;
+    color: #231f20;
+    background: rgba(0,0,0,0);
+    font-size: 18px;
+    font-weight: 600;
+    // text-align: center;
+    border:0;
+    border-bottom: 2px solid $black;
+    margin: 0 auto;
+    margin-top: 30px;
+    outline: 0;
+    margin-bottom: 20px;
+    border-radius: 0 !important;
 }

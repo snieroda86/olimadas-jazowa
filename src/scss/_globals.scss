@@ -87,8 +87,14 @@ p{
 .btn-black{
 	background: $black;
 }
+.btn-red{
+	background: $red !important;
+}
 .btn-black:hover{
 
+}
+.btn-red:hover{
+	background: $red-hover !important;
 }
 
 /*Datatables*/

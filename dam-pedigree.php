@@ -1,5 +1,5 @@
-<div class="col-12 pt-4">
-	<h4>Dam pedigree</h4>
+<div class="col-12">
+	<!-- <h4>Dam pedigree</h4> -->
 	<!-- Sire -->
 	<div class="pedigree-table">
 

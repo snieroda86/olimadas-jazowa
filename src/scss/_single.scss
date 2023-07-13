@@ -16,7 +16,7 @@
 			box-sizing: border-box;
 
 			.dog-cell-card{
-				padding:10px;
+				padding:6px 10px;
 				background: #fff;
 
 				a{
@@ -59,7 +59,9 @@
 
 			.undefined-q-mark{
 				p{
-					font-size: 14px;  
+					font-size: 14px; 
+					padding:0 !important;
+					margin:0 !important; 
 				}
 			}
 			

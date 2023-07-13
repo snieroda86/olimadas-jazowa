@@ -32,7 +32,22 @@ get_header();
 								  		<img class="img-fluid m-auto" src="<?php echo PATH_SN ?>/uploads/no_photo.jpg" alt="<?php the_title(); ?>" />
 								  	<?php endif; ?> 
 	                        	</div>
-	                        	<h4 class="pb-2"><?php _e('Dog information' , 'web14devsn'); ?></h4>
+	                        	<div class="row pt-3 pb-3">
+	                        		<div class="col-6 d-flex align-items-center"><h5><?php _e('Dog information' , 'web14devsn'); ?></h5></div>
+	                        		<div class="col-6 justify-content-end">
+	                        			<?php if(is_user_logged_in()): ?>
+	                        				<a href="<?php echo get_permalink(115) ?>?dog_id=<?php the_ID() ?>" class="btn-main-sn btn-red ml-auto">
+	                        					<?php _e('Edit dog' , 'web14devsn'); ?>
+	                        				</a>
+	                        			<?php else: ?>
+	                        				<a href="<?php echo wp_login_url(); ?>" class="btn-main-sn btn-red ml-auto">
+	                        					<?php _e('Log in to edit' , 'web14devsn'); ?>
+	                        				</a>
+	                        			<?php endif; ?>
+	                        		</div>
+
+	                        	</div>
+	                        	
 	                            <!-- Table info-->
 	                            <table class="table table table-bordered table-dog-info">
 	                            	<tr>
@@ -202,7 +217,7 @@ get_header();
 	            <!-- Pedigree table -->
 	            <div class="row">
 	            	<div class="col-12">
-	            		<h4>Sire pedigree</h4>
+	            		<h5>Dog pedigree</h5>
 	            		<!-- Sire -->
 	            		<div class="pedigree-table">
 	            			<?php 

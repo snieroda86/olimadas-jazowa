@@ -72,78 +72,75 @@ if(isset($_POST['edit_rodowod_psa'])){
         $validation_check = true;
     }
 
-    if($validation_check === true){
-        // Insert post
+    if ($validation_check === true) {
+        // Update post
+        $post_id = intval($_GET['dog_id']); // Pobranie ID posta do edycji
 
-        return;
+        $existing_post = get_post($post_id);
+        if (!$existing_post) {
+            $validation_errors[] = 'Post not found!';
+            return;
+        }
 
-        $new_post = array(
+        $updated_post = array(
+            'ID' => $post_id,
             'post_title' => $post_title,
             'post_status' => 'publish',
             'post_type' => 'rodowody_psow',
         );
 
-        $existing_post = get_page_by_title($post_title, OBJECT, 'rodowody_psow');
-        if ($existing_post) {
-            $validation_errors[] = 'Dog name already exists!';
-            return;
-        }else{
+        // Edycja istniejącego posta
+        $updated = wp_update_post($updated_post);
+        if ($updated) {
+            // Aktualizacja innych metadanych
+            // update_post_meta($post_id, 'dog_color', $color);
+            update_field('wlasciciel', $wlasciciel, $post_id);
+            update_field('plec_psa', $gender, $post_id);
+            update_field('owner_country', $owner_country, $post_id);
+            update_field('hodowca', $hodowca, $post_id);
+            update_field('breeder_country', $breeder_country, $post_id);
+            update_field('ojciec_sire', $ojciec_sire, $post_id);
+            update_field('matka_dam', $matka_dam, $post_id);
+            update_field('data_urodzenia', $data_urodzenia, $post_id);
+            update_field('tytuly', $tytuly, $post_id);
 
-            $post_id = wp_insert_post($new_post);
+            /*
+            ** Upload image
+            */
 
-            if ($post_id) {
-                add_post_meta($post_id, 'dog_color', $color);
-
-                // ACF fileds
-                update_field('wlasciciel', $wlasciciel , $post_id);
-                update_field('plec_psa', $gender , $post_id);
-                update_field('owner_country', $owner_country , $post_id);
-                update_field('hodowca', $hodowca , $post_id);
-                update_field('breeder_country', $breeder_country , $post_id);
-                update_field('ojciec_sire', $ojciec_sire , $post_id);
-                update_field('matka_dam', $matka_dam , $post_id);
-                update_field('data_urodzenia', $data_urodzenia , $post_id);
-                update_field('tytuly', $tytuly , $post_id);
-
-                /*
-                ** Upload image
-                */ 
-
-                if (isset($_FILES['dog_photo']) && !empty($_FILES['dog_photo']['name'])) {
-                    // Check image size
-                    $image_size = $p_image['size'] / 1024; // Rozmiar w kilobajtach
-                    if ($image_size > 300) {
-                        $validation_errors[] = 'Error: photo size cannot exceed 300kb';
-                        return;
-                    }
-
-                    // Sprawdzanie typu obrazka
-                    $image_type = strtolower(pathinfo($p_image['name'], PATHINFO_EXTENSION));
-                    if (!in_array($image_type, array('jpg', 'jpeg', 'png', 'gif'))) {
-                        $validation_errors[] = "Error: wrong image type ( allowed types: 'jpg', 'jpeg', 'png')";
-                        return;
-                    }
-
-
-
-                    $upload_dir = wp_upload_dir();
-                    $file = $upload_dir['path'] . '/' . $p_image['name'];
-                    move_uploaded_file( $p_image['tmp_name'], $file );
-                    $wp_filetype = wp_check_filetype( basename( $file ), null );
-                    $attachment = array(
-                        'post_mime_type' => $wp_filetype['type'],
-                        'post_title' => preg_replace( '/\.[^.]+$/', '', basename( $file ) ),
-                        'post_content' => '',
-                        'post_status' => 'inherit'
-                    );
-                    $attach_id = wp_insert_attachment( $attachment, $file, $post_id );
-                    require_once( ABSPATH . 'wp-admin/includes/image.php' );
-                    $attach_data = wp_generate_attachment_metadata( $attach_id, $file );
-                    wp_update_attachment_metadata( $attach_id, $attach_data );
-                    set_post_thumbnail( $post_id, $attach_id );
+            if (isset($_FILES['dog_photo']) && !empty($_FILES['dog_photo']['name'])) {
+                // Sprawdzenie rozmiaru obrazka
+                $image_size = $_FILES['dog_photo']['size'] / 1024; // Rozmiar w kilobajtach
+                if ($image_size > 300) {
+                    $validation_errors[] = 'Error: photo size cannot exceed 300kb';
+                    return;
                 }
 
-                // Create new dog card if not exists in db
+                // Sprawdzenie typu obrazka
+                $image_type = strtolower(pathinfo($_FILES['dog_photo']['name'], PATHINFO_EXTENSION));
+                if (!in_array($image_type, array('jpg', 'jpeg', 'png', 'gif'))) {
+                    $validation_errors[] = "Error: wrong image type (allowed types: 'jpg', 'jpeg', 'png')";
+                    return;
+                }
+
+                $upload_dir = wp_upload_dir();
+                $file = $upload_dir['path'] . '/' . $_FILES['dog_photo']['name'];
+                move_uploaded_file($_FILES['dog_photo']['tmp_name'], $file);
+                $wp_filetype = wp_check_filetype(basename($file), null);
+                $attachment = array(
+                    'post_mime_type' => $wp_filetype['type'],
+                    'post_title' => preg_replace('/\.[^.]+$/', '', basename($file)),
+                    'post_content' => '',
+                    'post_status' => 'inherit'
+                );
+                $attach_id = wp_insert_attachment($attachment, $file, $post_id);
+                require_once(ABSPATH . 'wp-admin/includes/image.php');
+                $attach_data = wp_generate_attachment_metadata($attach_id, $file);
+                wp_update_attachment_metadata($attach_id, $attach_data);
+                set_post_thumbnail($post_id, $attach_id);
+            }
+
+             // Create new dog card if not exists in db
                 // Sire 
                 $checkSireExists = getDogByTitleSN($ojciec_sire);
                 if ( !$checkSireExists->have_posts()) {
@@ -174,19 +171,16 @@ if(isset($_POST['edit_rodowod_psa'])){
 
                 }
 
-                // Redirect
-                $redirect_url = get_permalink( $post_id);
-                if ( wp_redirect( $redirect_url ) ) {
-                    exit;
-                }
-
-
-            } else {
-                $validation_errors[] = "The dog's contact card has not been created";
-                return;
+            // Przekierowanie
+            $redirect_url = get_permalink($post_id);
+            if (wp_redirect($redirect_url)) {
+                exit;
             }
+        } else {
+            $validation_errors[] = "The dog's contact card has not been updated";
+            return;
         }
-
     }
+
 
 }

@@ -210,8 +210,14 @@ get_header();
                             </div>
 
                             <!-- Photo -->
+                            <div class="current-photo">
+                                <?php if(has_post_thumbnail($_GET['dog_id'])): ?>
+                                    <img src="<?php echo get_the_post_thumbnail_url($_GET['dog_id']); ?>" alt="<?php the_title(); ?>" width="100">
+                                <?php endif; ?>
+                            </div>
+
                             <div class="form-group mb-4 dog-photo-container">
-                               
+                                
                                 <label class="label" for="input">Dog photo (optional)</label>
 
                                 <div class="input">
@@ -226,7 +232,7 @@ get_header();
                 </div>
                 <!-- Submit btn -->
                 <div class="pt-3 pb-5 text-center">
-                    <input type="submit" name="edit_rodowod_psa" value="Create a dog's pedigree" class=" btn-gold text-white btn-main-sn">
+                    <input type="submit" name="edit_rodowod_psa" value="Edit dog" class=" btn-gold text-white btn-main-sn">
                 </div>
             </form>
             <!-- Post insert form end -->
@@ -597,6 +603,7 @@ get_header();
             }
                     
             btn.on('click', function(){
+                $('.current-photo').css("display" , "none");
                 img.animate({opacity: 0}, 300);
                 inputFile.click();
             });

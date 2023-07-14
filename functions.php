@@ -245,6 +245,14 @@ function web14devsn_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'web14devsn_scripts' );
 
+// Custom Query vars
+function sn_custom_query_vars($vars) {
+    $vars[] = 'user_action';
+    return $vars;
+}
+add_filter('query_vars', 'sn_custom_query_vars');
+
+
 /*
  * Login page style
  */

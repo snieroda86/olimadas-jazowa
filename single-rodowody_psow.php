@@ -251,13 +251,13 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo get_the_ID() ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo get_the_ID(); ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    						<?php }
@@ -287,20 +287,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -327,20 +327,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -370,20 +370,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_2_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_2_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -411,20 +411,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_2_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_2_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -451,20 +451,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_2_2_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_2_2_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -492,20 +492,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_2_2_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_2_2_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -535,20 +535,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_3_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_3_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -575,20 +575,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_3_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_3_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -615,20 +615,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_3_2_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_3_2_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -655,20 +655,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_3_2_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_3_2_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -695,20 +695,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_3_3_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_3_3_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -735,20 +735,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_3_3_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_3_3_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -775,20 +775,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_3_4_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_3_4_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -815,20 +815,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_3_4_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<p class="undefined-label">Undefined</p>
+	                    								<p class="undefined-label">NN</p>
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_3_4_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -858,20 +858,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<p class="undefined-label">Undefined</p>
+		                    								<p class="undefined-label">NN</p>
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_4_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_4_1_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -898,20 +898,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_4_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_4_1_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -938,20 +938,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_4_2_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_4_2_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -978,20 +978,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_4_2_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_4_2_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1018,20 +1018,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_4_3_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_4_3_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1058,20 +1058,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_4_3_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_4_3_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1098,20 +1098,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_4_4_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_4_4_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1138,20 +1138,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_4_4_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_4_4_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1178,20 +1178,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_4_5_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_4_5_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1218,20 +1218,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_4_5_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_4_5_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1258,20 +1258,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_4_6_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_4_6_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1298,20 +1298,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_4_6_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_4_6_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1338,20 +1338,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_4_7_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_4_7_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1379,20 +1379,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $sire_4_7_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $sire_4_7_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1419,20 +1419,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_4_8_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_4_8_id ?>&sex=male"><?php _e('Create sire'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            
@@ -1459,20 +1459,20 @@ get_header();
 														
 													}else{ ?>
 														<div class="undefined-cell-inner">
-		                    								<!-- <p class="undefined-label">Undefined</p> -->
+		                    								<!-- <p class="undefined-label">NN</p> -->
 		                    								<a href="<?php echo $c_parent_url ?>?child_id=<?php echo $dam_4_8_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 		                    							</div>
 													<?php }
 	                    						}else{ ?>
 	                    							<div class="undefined-cell-inner">
-	                    								<!-- <p class="undefined-label">Undefined</p> -->
+	                    								<!-- <p class="undefined-label">NN</p> -->
 	                    								<a href="<?php echo $c_parent_url ?>/?child_id=<?php echo $dam_4_8_id ?>&sex=female"><?php _e('Create dam'); ?></a>	
 	                    							</div>
 	                    							
 	                    						<?php }
 	                    					}else{
 	                    						echo '<div class="undefined-q-mark">';
-	                    						echo '<p>Undefined</p>';
+	                    						echo '<p>NN</p>';
 	                    						echo '</div>';
 	                    					}
 	            

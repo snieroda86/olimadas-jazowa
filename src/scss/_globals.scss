@@ -23,6 +23,12 @@ p{
 .b-none{
 	border:0 !important;
 }
+.thead-dark-sn{
+	th{
+		background: $black !important;
+		color:#fff;
+	}
+}
 .heading-underline-sn{
 	position: relative;
 

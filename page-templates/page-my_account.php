@@ -24,10 +24,22 @@ get_header(); ?>
 
 		endwhile; // End of the loop.
 		?>
-		<div class="row">
+		<div class="row" style="min-height: 80vh;">
 			<div class="col-md-4 order-md-1 order-2">
 				<!-- Table buttons -->
                   <div class="table-buttons-sn">
+                  	<!-- Menu item -->
+                    <div class="table-button-item d-flex">
+                      <a href="<?php the_permalink(77); ?>?user_action=user_profile" class="d-flex">
+                        <div class="table-button-icon">
+                          <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="table-button-label btn-gold">
+                          Dashboard
+                        </div>
+                      </a>
+                    </div>
+                    <!-- Menu item end -->
                     <!-- Menu item -->
                     <div class="table-button-item d-flex">
                       <a href="<?php the_permalink(19); ?>" class="d-flex">
@@ -56,7 +68,7 @@ get_header(); ?>
                     <div class="table-button-item d-flex">
                       <a href="<?php echo get_permalink(77) ?>?user_action=edit_account" class="d-flex">
                         <div class="table-button-icon">
-                          <i class="fa-regular fa-user"></i>
+                          <i class="fa-regular fa-pen-to-square"></i>
                         </div>
                         <div class="table-button-label btn-gold">
                           Edit account
@@ -70,10 +82,30 @@ get_header(); ?>
 			<div class="col-md-8 order-md-2 order-1">
 				<?php 
 				$current_user = wp_get_current_user();
+				$user_action = get_query_var('user_action');
 
 				?>
 				<h4 class="pb-3"><?php printf( __( 'Welcome %s', 'web14devsn' ), esc_html( $current_user->user_login ) ); ?>!</h4>
 				<p>You are logged in. You can now create and edit pedigrees, add new dogs and edit their details. Enjoy!</p>
+
+				<?php  
+				
+				    if($user_action !== 'edit_account'){ ?>
+				    	
+				    	<table class="table thead-dark-sn table-bordered mt-3 mb-3 ">
+				    		<tr>
+				    			<th><?php _e('User email:', 'web14devsn'); ?></th><td><?php echo esc_html( $current_user->user_email );  ?></td>
+				    		</tr>
+				    		<tr>
+				    			<th><?php _e('First name:', 'web14devsn'); ?></th><td><?php echo esc_html( $current_user->user_firstname );  ?></td>
+				    		</tr>
+				    		<tr>
+				    			<th><?php _e('Last name:', 'web14devsn'); ?></th><td><?php echo esc_html( $current_user->user_lastname );  ?></td>
+				    		</tr>
+				    	</table>
+				    <?php }
+				
+				?>
 
 				<!-- Edit accounbt form -->
 				<?php 

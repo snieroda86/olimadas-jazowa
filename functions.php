@@ -258,7 +258,6 @@ add_filter('query_vars', 'sn_custom_query_vars');
  */
 function my_login_stylesheet() {
     wp_enqueue_style( 'custom-login-sn', get_template_directory_uri().'/dist/css/style-login.css' );
-    // wp_enqueue_script( 'custom-login', get_stylesheet_directory_uri() . '/style-login.js' );
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
@@ -311,6 +310,16 @@ function my_acf_json_save_point( $path ) {
     $path = get_stylesheet_directory() . '/acf-json';
     return $path;
     
+}
+
+// Open modal menu item
+add_filter( 'wp_nav_menu_items', 'sn_add_open_modal_menu_item', 10, 2 );
+function sn_add_open_modal_menu_item( $items, $args ) {
+   
+    if ($args->theme_location == 'menu-primary') {
+        $items .= '<li class="menu-item nav-item"><a href="#" data-toggle="modal" data-target="#virtual-parents-modal" class="nav-link">Virtual parents</a></li>';
+    }
+    return $items;
 }
 
 // Actions

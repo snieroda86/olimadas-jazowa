@@ -10,6 +10,9 @@
  */
 
 ?>
+
+  <?php include get_template_directory().'/inc/virtual-parents-modal.php' ?>
+
   <!-- footer section -->
   <footer class="container-fluid footer_section">
     <div class="container">
@@ -58,6 +61,8 @@
     })
   </script>
   <!-- Search modal end -->
+
+
 
 </body>
 </html>

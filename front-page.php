@@ -35,7 +35,7 @@ get_header();
                   <div class="table-buttons-sn">
                     <!-- Menu item -->
                     <div class="table-button-item d-flex">
-                      <a href="<?php the_permalink(15); ?>" class="d-flex">
+                      <a href="<?php the_permalink(19); ?>" class="d-flex">
                         <div class="table-button-icon">
                           <i class="fa-solid fa-plus"></i>
                         </div>
@@ -59,7 +59,7 @@ get_header();
                     <!-- Menu item end -->
                     <!-- Menu item -->
                     <div class="table-button-item d-flex">
-                      <a href="#" class="d-flex">
+                      <a href="<?php echo get_permalink(77) ?>" class="d-flex">
                         <div class="table-button-icon">
                           <i class="fa-regular fa-user"></i>
                         </div>

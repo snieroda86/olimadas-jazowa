@@ -1,5 +1,5 @@
 body.login {
-	background: #231f20;
+	background: #fff;
 	/*#b37f2b*/
 }
 body.login div#login {}
@@ -36,15 +36,15 @@ body.login div#login form#loginform p.forgetmenot input#rememberme {}
 body.login div#login form#loginform p.submit {}
 body.login div#login form#loginform p.submit input#wp-submit {}
 body.login div#login p#nav {
-	color: #fff;
+	/*color: #fff;*/
 	font-size: 16px;
 }
 body.login div#login p#nav a {
-	color: #fff;
+	/*color: #fff;*/
 	font-size: 16px;
 }
 body.login div#login p#backtoblog {}
 body.login div#login p#backtoblog a {
-	color: #fff;
+	/*color: #fff;*/
 	font-size: 16px;
 }

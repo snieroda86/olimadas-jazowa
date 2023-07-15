@@ -92,7 +92,7 @@ get_header();
             // Sire
             $sireArr = getAllSire();
             $sireJSON = json_encode($sireArr);
-            // Sire
+            // Dam
             $damArr = getAllDam();
             $damJSON = json_encode($damArr);
 

@@ -22,7 +22,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_1_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_1_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -58,7 +58,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_2_1_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_2_1_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -98,7 +98,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_2_2_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_2_2_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -141,7 +141,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_3_1_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_3_1_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -182,7 +182,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_3_2_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_3_2_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -222,7 +222,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_3_3_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_3_3_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -263,7 +263,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_3_4_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_3_4_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -306,7 +306,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_4_1_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_4_1_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -346,7 +346,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_4_2_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_4_2_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -386,7 +386,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_4_3_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_4_3_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -426,7 +426,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_4_4_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_4_4_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -466,7 +466,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_4_5_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_4_5_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -506,7 +506,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_4_6_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_4_6_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -546,7 +546,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_4_7_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_4_7_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -586,7 +586,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_4_8_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_4_8_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -629,7 +629,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_5_1_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_5_1_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -669,7 +669,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_5_2_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_5_2_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -709,7 +709,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_5_3_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_5_3_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -749,7 +749,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_5_4_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_5_4_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -789,7 +789,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_5_5_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_5_5_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -829,7 +829,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_5_6_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_5_6_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -869,7 +869,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_5_7_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_5_7_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -909,7 +909,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_5_8_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_5_8_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -949,7 +949,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_5_9_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_5_9_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -989,7 +989,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_5_10_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_5_10_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -1029,7 +1029,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_5_11_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_5_11_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -1069,7 +1069,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_5_12_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_5_12_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -1109,7 +1109,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_5_13_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_5_13_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -1150,7 +1150,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_5_14_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_5_14_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -1190,7 +1190,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_sire_5_15_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_sire_5_15_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';
@@ -1230,7 +1230,7 @@
 									$dam_permalink = get_permalink($dam_dog->ID);
 									$dam_dam_5_16_id = $dam_dog->ID;
 									$dam_dog_color = get_post_meta( $dam_dam_5_16_id , 'dog_color' , true);
-									echo '<div class="dog-cell-inner" style="background:'.$dam_dog_color.'">';
+									echo '<div class="dog-cell-inner dog-color-'.$dam_dog->ID.'" style="background:'.$dam_dog_color.'">';
 									echo '<div class="dog-cell-card">';
 									echo '<a href="'.$dam_permalink.'">'.$dam_dog->post_title.'</a>';
 									echo '</div>';

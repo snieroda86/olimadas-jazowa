@@ -147,6 +147,23 @@ if(isset($_POST['insert_rodowod_psa'])){
     if(empty($data_urodzenia)){
         $validation_errors[] = 'Birth date field is required';
     }
+	
+		    // Image upload
+    if (isset($_FILES['dog_photo']) && !empty($_FILES['dog_photo']['name'])) {
+        // Check image size
+        $image_size = $p_image['size'] / 1024; // Rozmiar w kilobajtach
+        if ($image_size > 300) {
+            $validation_errors[] = 'Error: photo size cannot exceed 300kb';
+            return;
+        }
+
+        // Chcek image type
+        $image_type = strtolower(pathinfo($p_image['name'], PATHINFO_EXTENSION));
+        if (!in_array($image_type, array('jpg', 'jpeg', 'png', 'gif'))) {
+            $validation_errors[] = "Error: wrong image type ( allowed types: 'jpg', 'jpeg', 'png')";
+            return;
+        }
+    }
 
     // Chceck errors
     $validation_check = false;
@@ -210,22 +227,7 @@ if(isset($_POST['insert_rodowod_psa'])){
                 */ 
 
                 if (isset($_FILES['dog_photo']) && !empty($_FILES['dog_photo']['name'])) {
-                    // Check image size
-                    $image_size = $p_image['size'] / 1024; // Rozmiar w kilobajtach
-                    if ($image_size > 300) {
-                        $validation_errors[] = 'Error: photo size cannot exceed 300kb';
-                        return;
-                    }
-
-                    // Sprawdzanie typu obrazka
-                    $image_type = strtolower(pathinfo($p_image['name'], PATHINFO_EXTENSION));
-                    if (!in_array($image_type, array('jpg', 'jpeg', 'png', 'gif'))) {
-                        $validation_errors[] = "Error: wrong image type ( allowed types: 'jpg', 'jpeg', 'png')";
-                        return;
-                    }
-
-
-
+                   
                     $upload_dir = wp_upload_dir();
                     $file = $upload_dir['path'] . '/' . $p_image['name'];
                     move_uploaded_file( $p_image['tmp_name'], $file );
@@ -273,9 +275,19 @@ if(isset($_POST['insert_rodowod_psa'])){
                     update_field('plec_psa', 'female' , $new_dam_id);
 
                 }
+				
+				// Create parent
+				if($_GET['sex']=='male'){
+					 update_field('ojciec_sire', $post_title , intval($_GET['child_id']));
+				} 
+				
+				if($_GET['sex']=='female'){
+					 update_field('matka_dam', $post_title , intval($_GET['child_id']));
+				}
+								
 
                 // Redirect
-                $redirect_url = get_permalink( $post_id);
+                $redirect_url = get_permalink( $_GET['child_id']);
                 if ( wp_redirect( $redirect_url ) ) {
                     exit;
                 }

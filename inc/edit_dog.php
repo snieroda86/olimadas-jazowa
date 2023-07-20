@@ -16,8 +16,11 @@ $tytuly = '';
 
 if(isset($_POST['edit_rodowod_psa'])){
 
+    $dog_id = isset($_GET['dog_id']) ? intval($_GET['dog_id']) : 0;
+    $current_dog = get_post($dog_id);
+    $current_dog_name = $current_dog ? sanitize_text_field($current_dog->post_title) : '';
 
-    $post_title = $_POST['post_title'];
+    $post_title = sanitize_text_field($_POST['post_title']) ;
     $gender = $_POST['gender'];
     $wlasciciel = $_POST['wlasciciel'];
     $owner_country = $_POST['owner_country'];
@@ -168,6 +171,52 @@ if(isset($_POST['edit_rodowod_psa'])){
 
                     $new_dam_id = wp_insert_post($new_dam);
                     update_field('plec_psa', 'female' , $new_dam_id);
+
+                }
+
+                // Edycja tytułu posta dal wszystkich psów
+                if($gender=='female'){
+
+                    $args = array(
+                        'post_type' => 'rodowody_psow',
+                        'meta_query' => array(
+                            array(
+                                'key' => 'matka_dam',
+                                'value' => $current_dog_name,
+                                'compare' => '='
+                            )
+                        )
+                    );
+
+                    $posts_edit = get_posts($args);
+
+                    foreach ($posts_edit as $post_e) {
+                            setup_postdata($post_e);
+                            $post_id_e = $post_e->ID;
+                            update_post_meta($post_id_e, 'matka_dam', $post_title);
+                    }
+
+
+                }elseif($gender =='male'){
+                    $args = array(
+                        'post_type' => 'rodowody_psow',
+                        'meta_query' => array(
+                            array(
+                                'key' => 'ojciec_sire',
+                                'value' => $current_dog_name,
+                                'compare' => '='
+                            )
+                        )
+                    );
+
+                    $posts_edit = get_posts($args);
+
+                    foreach ($posts_edit as $post_e) {
+                            setup_postdata($post_e);
+                            $post_id_e = $post_e->ID;
+                            update_post_meta($post_id_e, 'ojciec_sire', $post_title);
+                    }
+
 
                 }
 
